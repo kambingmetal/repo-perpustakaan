@@ -1,0 +1,188 @@
+
+
+
+/* color */
+
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li > ul > li > a:hover,
+.main-menu .navigation > li > .megamenu li > a:hover,
+.main-menu .navigation > li > ul > li > ul > li > a:hover,
+.scroll-to-top .scroll-bar-text,
+.header-top .top-inner p i,
+.header-top .top-inner .social-links li a:hover,
+.main-header .menu-right-content .search-box-outer:hover,
+.main-header .menu-right-content .btn-box a,
+.sub-title,
+.feature-block-one .inner-box .icon-box .icon,
+.feature-block-one .inner-box h3 a:hover,
+.image_block_one .image-box .image-content h2,
+.list-style-one li:before,
+.funfact-block-one .inner-box .icon-box,
+.events-block-one .inner-box .lower-content .location-box,
+.events-block-one .inner-box .lower-content h3 a:hover,
+.team-block-one .inner-box .lower-content h3 a:hover,
+.main-footer .footer-top .top-inner .footer-menu li a:hover,
+.main-footer .about-widget .info li a:hover,
+.main-footer .links-widget .links-list li a:hover,
+.main-footer .footer-bottom .copyright p a,
+.scroll-to-top::after,
+.banner-style-two .content-box .theme-btn:hover,
+.image_block_two .image-inner .experience-box h2,
+.speciality-block-one .inner-box h3 a:hover,
+.speciality-block-one .inner-box .btn-box .link-text a:hover,
+.video-btn a,
+.working-block-two .inner-box h3 a:hover,
+.events-block-one .inner-box .event-info li i,
+.nav-style-one .owl-nav button,
+.banner-style-three .content-box .theme-btn,
+.banner-style-three .image-box .support-box .icon-box,
+.banner-style-three .image-box .support-box span,
+.banner-style-three .image-box .support-box a:hover,
+.feature-style-two .sec-title h2 span,
+.feature-block-three .inner-box .icon-box .icon,
+.service-block-two .inner-box .content-box .link a:hover,
+.journey-block-one .inner-box h3 a:hover,
+.news-block-one .inner-box .lower-content .category,
+.news-block-one .inner-box .lower-content h3 a:hover,
+.chooseus-block-one .inner-box:hover .icon-box .icon,
+.faq-style-two .inner-box .tab-btn-box .tab-btn .icon-box,
+.main-header.home-5 .header-top .top-inner .social-links li a:hover,
+.feature-block-four .inner-box h3 a:hover,
+.research-details .image-inner .info-list .share-links li a:hover,
+.service-sidebar .support-widget .support-box .icon-box,
+.service-sidebar .support-widget .support-box h3 a:hover,
+.event-details-content .info-list li,
+.team-details .content-box .inner-box .single-item h4 a:hover,
+.history-section .content-box h3 a:hover,
+.error-section h1,
+.blog-sidebar .search-widget .search-form .form-group input:focus + button,
+.blog-sidebar .search-widget .search-form .form-group button:hover,
+.blog-sidebar .category-widget .category-list li a:hover,
+.blog-sidebar .post-widget .post h4 a:hover,
+.blog-sidebar .post-widget .post .post-date,
+.news-block-two .inner-box .content-box .category,
+.news-block-two .inner-box .content-box h3 a:hover,
+.news-block-two .inner-box .content-box .post-info .author a:hover,
+.news-block-two .inner-box .content-box .post-info .date,
+.blog-details-content .post-info li span,
+.blog-details-content .post-share-option .social-links li a:hover,
+.info-block-one .inner-box p a:hover
+
+{
+  color: var(--theme-color) !important;
+}
+
+
+/** background **/
+
+.switcher .switch_btn button,
+button.rtl,
+button.ltr,
+.main-header .menu-right-content .btn-box a:hover,
+.theme-btn,
+.sub-title:before,
+.feature-section .inner-container .feature-block-one:first-child .inner-box,
+.service-block-one .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.service-block-one .inner-box:before,
+.working-block-one .inner-box .count-box .r-hex:first-child .r-hex-inner:before,
+.events-block-one .inner-box:hover .image-box,
+.events-block-one .inner-box .lower-content .post-date,
+.team-block-one .inner-box .image-box .image,
+.team-block-one .inner-box .image-box .social-links li a:hover,
+.main-footer .footer-bottom .social-links li a:hover,
+.image_block_two .image-inner .experience-box h2:before,
+.service-style-two .tab-btn-box .tab-btns li:before,
+.speciality-block-one .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.working-style-two .working-block:first-child .working-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.nav-style-one .owl-nav button:hover,
+.banner-style-three .image-box .support-box .icon-box:before,
+.feature-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.feature-block-three .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.journey-block-one .inner-box .year,
+.journey-block-one .inner-box .decore,
+.testimonial-block-one .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.dots-style-one .owl-dots .owl-dot:before,
+.news-block-one .inner-box .lower-content .post-date,
+.news-block-one .inner-box .image-box,
+.header-style-four .header-lower .logo-box,
+.chooseus-block-one .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.chooseus-block-one .inner-box .bg-layer:before,
+.image_block_three .image-box .experience-box .r-hex:first-child .r-hex-inner:before,
+.faq-style-two .inner-box .tab-btn-box .tab-btn:before,
+.feature-block-four .inner-box .icon-box .r-hex:first-child .r-hex-inner:before,
+.working-block-three .inner-box .count-box,
+.working-block-three .inner-box::before,
+.research-details .content-three .tab-btn-box .tab-btn:before,
+.service-sidebar .category-widget .category-list li a:hover,
+.service-sidebar .download-widget .download-list li button span,
+.service-sidebar .download-widget .download-list li button:hover,
+.service-sidebar .support-widget .support-box .icon-box:before,
+.service-sidebar .category-widget .category-list li a.current,
+.pagination li a:hover,
+.pagination li a.current,
+.team-details .content-box .social-links li a:before,
+.history-section .year,
+.history-section .border-line:before,
+.history-section .border-line:after,
+.sortable-masonry .filter-tabs li:hover,
+.sortable-masonry .filter-tabs li.active,
+.blog-sidebar .tags-widget .tags-list li a:hover,
+.news-block-two .inner-box .image-box,
+.blog-details-content .upper-image .post-date,
+.blog-details-content .post-share-option .post-tags li a:hover,
+.info-block-one .inner-box .r-hex:first-child .r-hex-inner:before
+
+{
+  background: var(--theme-color) !important;
+}
+
+
+
+
+/** border-color **/
+
+.main-menu .navigation > li > ul,
+.main-menu .navigation > li > .megamenu,
+.main-menu .navigation > li > ul > li > ul,
+.main-header .menu-right-content .btn-box a,
+.image_block_one .image-box .image-content,
+.main-footer .newsletter-widget .newsletter-form .form-group input:focus,
+.feature-block-three .inner-box:hover,
+.dots-style-one .owl-dots .owl-dot.active,
+.dots-style-one .owl-dots .owl-dot:hover,
+.header-style-four .menu-right-content .btn-box a:hover,
+.service-sidebar .download-widget .download-list li button:hover,
+.history-section .content-box,
+.faq-form-section .form-inner .form-group input:focus,
+.faq-form-section .form-inner .form-group textarea:focus,
+.blog-sidebar .search-widget .search-form .form-group input:focus,
+.blog-sidebar .tags-widget .tags-list li a:hover,
+.blog-sidebar .newsletter-widget .form-inner .form-group input:focus,
+.blog-details-content blockquote,
+.blog-details-content .post-share-option .post-tags li a:hover,
+.blog-details-content .comment-form-box .form-inner .form-group input:focus,
+.blog-details-content .comment-form-box .form-inner .form-group textarea:focus,
+#contact-form .form-group input:focus,
+#contact-form .form-group textarea:focus
+
+{
+  border-color: var(--theme-color) !important;
+}
+
+
+.scroll-to-top .scroll-top-inner path {
+  stroke: var(--theme-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+

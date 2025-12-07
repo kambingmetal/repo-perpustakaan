@@ -1,0 +1,202 @@
+
+/** chooseus-section **/
+
+.chooseus-section{
+  position: relative;
+}
+
+.chooseus-block-one .inner-box{
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 10px 0px 60px 0px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 40px 30px 41px 30px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.chooseus-block-one .inner-box .bg-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.32, 0.87);
+}
+
+.chooseus-block-one .inner-box:hover .bg-layer{
+  height: 100%;
+}
+
+.chooseus-block-one .inner-box .bg-layer:before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  opacity: 0.9;
+}
+
+.chooseus-block-one .inner-box .icon-box{
+  position: relative;
+  display: inline-block;
+  width: 78px;
+  height: 90px;
+  margin-bottom: 30px;
+}
+
+.chooseus-block-one .inner-box .icon-box .icon{
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  width: 78px;
+  height: 90px;
+  line-height: 90px;
+  transition: all 500ms;
+}
+
+.chooseus-block-one .inner-box:hover .icon-box .icon{
+
+}
+
+.chooseus-block-one .inner-box .icon-box .r-hex:first-child .r-hex-inner:before{
+  transition: all 500ms ease;
+}
+
+.chooseus-block-one .inner-box:hover .icon-box .r-hex:first-child .r-hex-inner:before{
+  background: #fff !important;
+}
+
+.chooseus-block-one .inner-box .icon-box .r-hex{
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.chooseus-block-one .inner-box h3{
+  position: relative;
+  display: block;
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+
+.chooseus-block-one .inner-box h3 a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.chooseus-block-one .inner-box:hover h3 a,
+.chooseus-block-one .inner-box:hover p{
+  color: #fff;
+}
+
+.chooseus-block-one .inner-box h3 a:hover{
+  text-decoration: underline;
+}
+
+.chooseus-block-one .inner-box p{
+  margin-bottom: 25px;
+  transition: all 500ms ease;
+}
+
+.chooseus-block-one .inner-box .btn-box{
+  position: relative;
+  display: block;
+}
+
+.chooseus-block-one .inner-box .btn-box .link-icon{
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.chooseus-block-one .inner-box:hover .btn-box .link-icon{
+  transform: scale(0,0);
+}
+
+.chooseus-block-one .inner-box .btn-box .link-icon a{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: var(--title-color);
+}
+
+.chooseus-block-one .inner-box .btn-box .link-text{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+  transform: scale(0,0);
+}
+
+.chooseus-block-one .inner-box:hover .btn-box .link-text{
+  transform: scale(1,1);
+}
+
+.chooseus-block-one .inner-box .btn-box .link-text a{
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: var(--title-font);
+  font-weight: 500;
+  color: #fff;
+}
+
+.chooseus-block-one .inner-box .btn-box .link-text a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

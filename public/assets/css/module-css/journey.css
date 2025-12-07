@@ -1,0 +1,175 @@
+
+.journey-section{
+  position: relative;
+}
+
+.journey-section .inner-container{
+  position: relative;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+.journey-section .inner-container .border-line{
+  position: absolute;
+  left: 40px;
+  top: 87px;
+  width: calc(100% - 40px);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.20);
+}
+
+.journey-section .bg-box{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: calc(50% + 140px);
+  overflow: hidden;
+}
+
+.journey-section .bg-layer:before{
+  position: absolute;
+  content: '';
+  background: linear-gradient(-90deg, #37AA67 0.76%, #08349E 99.64%);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.journey-section .slider-content{
+  position: relative;
+  margin-right: -330px;
+}
+
+.journey-block-one .inner-box{
+  position: relative;
+  display: block;
+}
+
+.journey-block-one .inner-box .year{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px 15px;
+  width: 93px;
+  margin-bottom: 40px;
+}
+
+.journey-block-one .inner-box .decore{
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+.journey-block-one .inner-box .decore:before{
+  position: absolute;
+  content: '';
+  background-image: url(../../images/shape/shape-31.png);
+  width: 9px;
+  height: 62px;
+  left: 3px;
+  top: -24px;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.journey-block-one .inner-box .image-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 23px;
+}
+
+.journey-block-one .inner-box .image-box img{
+  width: 100%;
+  -webkit-transition: all 0.5s cubic-bezier(0.4, 0.28, 0.31, 1.28) 0.2s;
+  transition: all 0.5s cubic-bezier(0.4, 0.28, 0.31, 1.28) 0.2s;
+}
+
+.journey-block-one .inner-box:hover .image-box img{
+  transform: scale(1.1);
+}
+
+.journey-block-one .inner-box h3{
+  position: relative;
+  display: block;
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.journey-block-one .inner-box h3 a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.journey-block-one .inner-box h3 a:hover{
+
+}
+
+.journey-section .owl-nav{
+  position: absolute;
+  top: -146px;
+  left: 0px;
+  max-width: 1290px;
+  width: 100%;
+  text-align: right;
+}
+
+.journey-section .owl-nav .owl-prev{
+  margin-right: 10px;
+}
+
+.journey-section .owl-nav button{
+  background: rgba(255, 255, 255, 0.10);
+  color: #fff !important;
+}
+
+.journey-section .owl-nav button:hover{
+  background: #fff !important;
+  color: var(--title-color) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

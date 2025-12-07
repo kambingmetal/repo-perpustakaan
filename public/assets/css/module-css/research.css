@@ -1,0 +1,160 @@
+
+/** research-section **/
+
+.research-section{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.research-section .bg-layer{
+  opacity: 0.5;
+}
+
+.research-section:before{
+  position: absolute;
+  content: '';
+  background: linear-gradient(102.73deg, #37AA67 0.76%, #08349E 99.64%);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.research-block-one .inner-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.research-block-one .inner-box .image-box{
+  position: relative;
+  display: block;
+}
+
+.research-block-one .inner-box .image-box .overlay-image{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 0%;
+  border-radius: 10px;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.research-block-one .inner-box .image-box .overlay-image img {
+  transform: translateY(-50%) scaleY(1.5);
+  opacity: 0;
+  filter: blur(10px);
+  object-fit: cover;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.research-block-one .inner-box:hover .image-box .overlay-image img {
+  transform: translateY(0%) scaleY(1);
+  opacity: 0.2;
+  filter: blur(0px);
+}
+
+.research-block-one .inner-box:hover .image-box .overlay-image{
+  height: 100%;
+}
+
+.research-block-one .inner-box .image-box .overlay-image:before{
+  position: absolute;
+  content: '';
+  background: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.research-block-one .inner-box .image-box .image{
+  position: relative;
+  display: block;
+  border-radius: 10px;
+}
+
+.research-block-one .inner-box .image-box .image:before{
+  position: absolute;
+  content: '';
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.22%, rgba(0, 0, 0, 0.42) 81.33%);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.research-block-one .inner-box .image-box img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.research-block-one .inner-box .text-box{
+  position: absolute;
+  left: 0px;
+  bottom: 20px;
+  z-index: 5;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.research-block-one .inner-box .text-box h3{
+  position: relative;
+  display: block;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.research-block-one .inner-box .text-box h3 a{
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.research-block-one .inner-box .text-box h3 a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

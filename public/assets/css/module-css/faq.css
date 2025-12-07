@@ -1,0 +1,275 @@
+
+/** faq-section **/
+
+.faq-section{
+  position: relative;
+}
+
+.faq-section .inner-container{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion-box .accordion{
+  position: relative;
+  background: #fff;
+  box-shadow: 10px 0px 100px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.accordion-box .accordion:last-child{
+  margin-bottom: 0px;
+}
+
+.accordion-box .accordion .acc-btn{
+  position: relative;
+  padding: 20px 30px 20px 30px;
+  cursor: pointer;
+}
+
+.accordion-box .accordion .acc-btn h4{
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 33px;
+}
+
+.accordion-box .accordion .acc-btn h4 span{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.accordion-box .accordion .acc-content{
+  position: relative;
+  padding: 12px 60px 35px 30px;
+}
+
+.faq-section .pattern-layer .pattern-1{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.faq-section .pattern-layer .pattern-2{
+  position: absolute;
+  left: 0px;
+  top: 150px;
+  width: 388px;
+  height: 1476px;
+  background-repeat: no-repeat;
+}
+
+.faq-section .pattern-layer .pattern-3{
+  position: absolute;
+  top: 170px;
+  right: 0px;
+  width: 476px;
+  height: 933px;
+  background-repeat: no-repeat;
+}
+
+
+/** faq-style-two **/
+
+.faq-style-two{
+  position: relative;
+}
+
+.faq-style-two .tabs-content .shape{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 1346px;
+  height: 1346px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.faq-style-two .inner-box{
+  position: relative;
+  display: block;
+}
+
+.faq-style-two .inner-box .tab-btn-box{
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 455px 55px 55px 55px;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btns{
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn{
+  position: relative;
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  padding: 19px 20px 11px 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn:before{
+  position: absolute;
+  content: '';
+  width: calc(100% + 1px);
+  height: calc(100% + 10px);
+  left: 0px;
+  top: -5px;
+  border-radius: 10px;
+  transform: scale(0,0);
+  z-index: -1;
+  transition: all 500ms;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn.active-btn:before,
+.faq-style-two .inner-box .tab-btn-box .tab-btn:hover:before{
+  transform: scale(1,1);
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn .icon-box{
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  margin-bottom: 2px;
+  transition: all 500ms;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn.active-btn .icon-box,
+.faq-style-two .inner-box .tab-btn-box .tab-btn:hover .icon-box{
+  color: #fff !important;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn h6{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  transition: all 500ms ease;
+}
+
+.faq-style-two .inner-box .tab-btn-box .tab-btn.active-btn h6,
+.faq-style-two .inner-box .tab-btn-box .tab-btn:hover h6{
+  color: #fff;
+}
+
+.faq-style-two .pattern-layer .pattern-1{
+  position: absolute;
+  left: -176px;
+  bottom: -140px;
+  width: 392px;
+  height: 398px;
+  background-repeat: no-repeat;
+}
+
+.faq-style-two .pattern-layer .pattern-2{
+  position: absolute;
+  top: -90px;
+  right: 0px;
+  width: 440px;
+  height: 928px;
+  background-repeat: no-repeat;
+}
+
+
+/** faq-form-section **/
+
+.faq-form-section{
+  position: relative;
+  padding: 120px 0px 210px 0px;
+}
+
+.faq-form-section .form-inner{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.faq-form-section .form-inner .form-group{
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.faq-form-section .form-inner .form-group:last-child{
+  margin-bottom: 0px;
+}
+
+.faq-form-section .form-inner .form-group input[type='text'],
+.faq-form-section .form-inner .form-group input[type='email'],
+.faq-form-section .form-inner .form-group textarea{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 55px;
+  font-size: 14px;
+  color: var(--text-color);
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.10);
+  padding: 10px 30px;
+  transition: all 500ms;
+}
+
+.faq-form-section .form-inner .form-group input:focus,
+.faq-form-section .form-inner .form-group textarea:focus{
+
+}
+
+.faq-form-section .form-inner .form-group textarea{
+  height: 170px;
+  resize: none;
+  border-radius: 10px;
+  padding-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

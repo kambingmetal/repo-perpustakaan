@@ -1,0 +1,166 @@
+
+/** cta-section **/
+
+.cta-section{
+  position: relative;
+}
+
+.cta-block-one .inner-box{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 80px 50px 84px 50px;
+  z-index: 1;
+}
+
+.cta-block-one .inner-box .bg-layer{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+.cta-block-one .inner-box .bg-layer:before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(-90deg, rgba(55, 170, 103, 0) 0%, #37AA67 90.95%);
+}
+
+.cta-block-one .inner-box:hover .bg-layer{
+  transform: scale(1.1);
+}
+
+.cta-block-one .inner-box .text{
+  position: relative;
+  display: block;
+  font-size: 14px;
+  line-height: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.cta-block-one .inner-box h2{
+  display: block;
+  font-size: 40px;
+  line-height: 50px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.cta-block-one .inner-box .theme-btn{
+  background: #fff !important;
+  color: var(--title-color) !important;
+}
+
+.cta-block-one .inner-box .theme-btn:hover{
+  color: #fff !important;
+}
+
+.cta-section .inner-container{
+  position: relative;
+  margin-top: -185px;
+}
+
+.cta-section.alternat-2 .inner-container{
+  margin-top: 0px;
+}
+
+
+/** cta-style-two **/
+
+.cta-style-two{
+  position: relative;
+}
+
+.cta-style-two .inner-container{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: -80px;
+  margin-bottom: -80px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(102.73deg, #37AA67 0.76%, #08349E 99.64%);
+  padding: 40px 60px 39px 60px;
+}
+
+.cta-style-two .content-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-style-two .content-box h2{
+  font-size: 36px;
+  line-height: 40px;
+  color: #fff;
+}
+
+.cta-style-two .content-box .btn-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cta-style-two .content-box .btn-box a:first-child{
+  background: #fff !important;
+  color: var(--title-color) !important;
+}
+
+.cta-style-two .content-box .btn-box a:first-child:hover{
+  color: #fff !important;
+}
+
+.cta-style-two .inner-container #particles-js{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

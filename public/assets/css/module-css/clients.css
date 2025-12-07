@@ -1,0 +1,149 @@
+
+/** clients-section **/
+
+.clients-section{
+  position: relative;
+  padding: 61px 0px;
+}
+
+.clients-section .outer-container{
+  position: relative;
+  padding: 0px 85px;
+}
+
+.clients-section .clients-logo{
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.clients-section .clients-logo img{
+  position: relative;
+  display: block;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  opacity: 0.5;
+  transition: all 500ms ease;
+}
+
+.clients-section .clients-logo img:hover{
+  opacity: 1;
+}
+
+.clients-section .owl-carousel .owl-stage{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+.clients-section.style-two{
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.04);
+}
+
+.clients-section.style-two .clients-logo:before{
+  position: absolute;
+  content: '';
+  background: #C1C1C1;
+  width: 1px;
+  height: 160px;
+  top: -65px;
+  right: -15px;
+  opacity: 0.20;
+}
+
+.clients-section.style-two .owl-carousel .owl-stage-outer{
+  overflow: visible;
+}
+
+.clients-section.style-two .owl-carousel .owl-stage-outer .owl-item{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.clients-section.style-two .owl-carousel .owl-stage-outer .owl-item.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/** clients-style-three **/
+
+.clients-style-three{
+  position: relative;
+}
+
+.clients-style-three .clients-block{
+  position: relative;
+  display: block;
+  background: #F5F7F9;
+  border-radius: 10px;
+  transition: all 500ms;
+}
+
+.clients-style-three .clients-block:hover{
+  background: #fff;
+  box-shadow: 10px 0px 50px 0px rgba(0, 0, 0, 0.08);
+}
+
+.clients-style-three .clients-block img{
+  width: 100%;
+}
+
+.clients-style-three .owl-carousel .owl-stage-outer{
+  overflow: visible;
+}
+
+.clients-style-three .owl-carousel .owl-stage-outer .owl-item{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.clients-style-three .owl-carousel .owl-stage-outer .owl-item.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.clients-section.home-5{
+  background: #F5F7F9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,347 @@
+
+/** working-section **/
+
+.working-section{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(102.73deg, #37AA67 0.76%, #08349E 99.64%);
+}
+
+.working-section .bg-layer{
+  opacity: 0.5;
+}
+
+.working-section .bg-layer:before{
+  position: absolute;
+  content: '';
+  background: linear-gradient(102.73deg, #37AA67 0.76%, #08349E 99.64%);
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  mix-blend-mode: multiply;
+}
+
+.working-block-one .inner-box{
+  position: relative;
+  display: block;
+  padding: 0px 0px;
+  margin-bottom: 30px;
+}
+
+.working-block-one .inner-box .count-box{
+  position: relative;
+  display: inline-block;
+  width: 63px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 28px;
+  font-family: var(--title-font);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.working-block-one .inner-box .count-box span{
+  position: relative;
+  display: inline-block;
+}
+
+.working-block-one .inner-box .count-box .shape{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 63px;
+  height: 70px;
+  background-repeat: no-repeat;
+}
+
+.working-block-one .inner-box h3{
+  position: relative;
+  display: block;
+  font-size: 28px;
+  line-height: 36px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.working-block-one .inner-box p{
+  color: #fff;
+}
+
+.working-section .inner-container:before{
+  position: absolute;
+  content: '';
+  background: rgba(255, 255, 255, 0.30);
+  width: calc(100% - 260px);
+  height: 1px;
+  left: 130px;
+  top: 35px;
+}
+
+
+/** working-style-two **/
+
+.working-style-two{
+  position: relative;
+}
+
+.working-block-two .inner-box{
+  position: relative;
+  display: block;
+  padding: 0px 40px;
+}
+
+.working-block-two .inner-box .icon-box{
+  position: relative;
+  display: inline-block;
+  width: 78px;
+  height: 90px;
+  margin-bottom: 30px;
+}
+
+.working-block-two .inner-box .icon-box .icon{
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  width: 78px;
+  height: 90px;
+  line-height: 90px;
+}
+
+.working-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before{
+  transition: all 500ms ease;
+}
+
+.working-block-two .inner-box:hover .icon-box .r-hex:first-child .r-hex-inner:before,
+.working-style-two .working-block:first-child .working-block-two .inner-box:hover .icon-box .r-hex:first-child .r-hex-inner:before{
+  background: var(--secondary-color) !important;
+}
+
+.working-style-two .working-block:first-child .working-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before{
+  background: var(--theme-color);
+}
+
+.working-style-two .working-block:nth-child(2) .working-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before{
+  background: #FFB806;
+}
+
+.working-style-two .working-block:last-child .working-block-two .inner-box .icon-box .r-hex:first-child .r-hex-inner:before{
+  background: #FF414B;
+}
+
+.working-block-two .inner-box .icon-box .r-hex{
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.working-block-two .inner-box h3{
+  display: block;
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 14px;
+}
+
+.working-block-two .inner-box h3 a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.working-block-two .inner-box h3 a:hover{
+
+}
+
+.working-block-two .inner-box .shape{
+  position: absolute;
+  top: 38px;
+  right: -120px;
+  width: 228px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+.working-style-two .pattern-layer .pattern-1{
+  position: absolute;
+  right: 0px;
+  bottom: 230px;
+  width: 297px;
+  height: 559px;
+  background-repeat: no-repeat;
+}
+
+.working-style-two .pattern-layer .pattern-2{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 449px;
+  height: 795px;
+  background-repeat: no-repeat;
+}
+
+
+/** working-style-three **/
+
+.working-style-three{
+  position: relative;
+  overflow: hidden;
+}
+
+.working-style-three .inner-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.working-block-three{
+  position: relative;
+}
+
+.working-block-three .shape{
+  position: absolute;
+  top: 138px;
+  right: -150px;
+  width: 102px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+
+.working-block-three .inner-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 290px;
+  background: #F5F7F9;
+  border: solid;
+  border-width: 20px;
+  border-color: #fff;
+  box-shadow: 0px 0px 120px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
+.working-block-three .inner-box::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  transform-origin: bottom right;
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  z-index: -1;
+}
+
+.working-block-three .inner-box:hover::before {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+  transform-origin: top center;
+}
+
+.working-block-three .inner-box .count-box{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border: solid;
+  border-width: 9px;
+  border-color: #fff;
+  border-radius: 50%;
+  box-shadow: 20px 0px 60px 0px rgba(0, 0, 0, 0.20);
+}
+
+.working-block-three .inner-box .count-box h2{
+  display: block;
+  font-size: 30px;
+  line-height: 18px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.working-block-three .inner-box .count-box h6{
+  display: block;
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.working-block-three .inner-box h3{
+  position: relative;
+  display: block;
+  font-size: 28px;
+  line-height: 28px;
+  transition: all 500ms ease;
+}
+
+.working-block-three .inner-box:hover h3{
+  color: #fff;
+}
+
+.working-style-three .pattern-layer .pattern-1{
+  position: absolute;
+  left: -134px;
+  top: 150px;
+  width: 267px;
+  height: 256px;
+  background-repeat: no-repeat;
+}
+
+.working-style-three .pattern-layer .pattern-2{
+  position: absolute;
+  top: -80px;
+  right: 0px;
+  width: 453px;
+  height: 933px;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

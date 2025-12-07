@@ -1,0 +1,83 @@
+
+/** error-section **/
+
+.error-section{
+  position: relative;
+  padding: 120px 0px 180px 0px;
+}
+
+.error-section .image-box{
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.error-section h1{
+  display: block;
+  font-size: 140px;
+  line-height: 90px;
+  font-weight: 700;
+  margin-bottom: 120px;
+}
+
+.error-section h2{
+  display: block;
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.error-section .btn-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-section .btn-box .theme-btn:first-child{
+  background: rgba(17, 17, 17, 1) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
