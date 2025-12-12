@@ -1,3 +1,80 @@
+@php
+$currentRoute = Route::currentRouteName();
+
+$navigationRoutes = [
+    'home' => [
+        'label' => 'Beranda',
+        'route' => 'home',
+        'routes' => ['home'] // routes that should make this item active
+    ],
+    'profile' => [
+        'label' => 'Profil',
+        'route' => '#',
+        'routes' => ['profile.sejarah', 'profile.visi-misi', 'profile.struktur', 'profile.tim'],
+        'children' => [
+            'sejarah' => [
+                'label' => 'Sejarah',
+                'route' => 'profile.sejarah'
+            ],
+            'visi-misi' => [
+                'label' => 'Visi dan Misi',
+                'route' => '#'
+            ],
+            'struktur' => [
+                'label' => 'Struktur Organisasi',
+                'route' => '#'
+            ],
+            'tim' => [
+                'label' => 'Tim Perpustakaan',
+                'route' => '#'
+            ]
+        ]
+    ],
+    'services' => [
+        'label' => 'Layanan dan Fasilitas',
+        'route' => '#',
+        'routes' => ['services.jam-layanan', 'services.jenis-layanan', 'services.fasilitas'],
+        'children' => [
+            'jam-layanan' => [
+                'label' => 'Jam Layanan',
+                'route' => '#'
+            ],
+            'jenis-layanan' => [
+                'label' => 'Jenis Layanan',
+                'route' => '#'
+            ],
+            'fasilitas' => [
+                'label' => 'Fasilitas',
+                'route' => '#'
+            ]
+        ]
+    ],
+    'contact' => [
+        'label' => 'Hubungi Kami',
+        'route' => '#',
+        'routes' => ['contact']
+    ]
+];
+
+// Function to check if menu item is active
+function isMenuActive($item, $currentRoute) {
+    if (isset($item['routes']) && in_array($currentRoute, $item['routes'])) {
+        return true;
+    }
+    if (isset($item['route']) && $item['route'] === $currentRoute) {
+        return true;
+    }
+    if (isset($item['children'])) {
+        foreach ($item['children'] as $child) {
+            if (isset($child['route']) && $child['route'] === $currentRoute) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+@endphp
+
 <!-- main header -->
 <header class="main-header">
     <!-- header-top -->
@@ -19,7 +96,7 @@
         <div class="auto-container">
             <div class="outer-box">
                 <div class="logo-box">
-                    <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo"><a href="{{ route('home') }}"><img src="/assets/images/logo.png" alt=""></a></figure>
                 </div>
                 <div class="menu-area">
                     <!--Mobile Navigation Toggler-->
@@ -31,24 +108,19 @@
                     <nav class="main-menu navbar-expand-md navbar-light clearfix">
                         <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li class="current"><a href="{{ route('home') }}">Home</a>
-                                </li> 
-                                <li class="dropdown"><a href="index.html">Profil</a>
-                                    <ul>
-                                        <li><a href="research.html">Sejarah</a></li>
-                                        <li><a href="research-details.html">Visi dan Misi</a></li>
-                                        <li><a href="research-details.html">Struktur Organisasi</a></li>
-                                        <li><a href="research-details.html">Tim Perpustakaan</a></li>
-                                    </ul>
-                                </li> 
-                                <li class="dropdown"><a href="index.html">Layanan dan Fasilitas</a>
-                                    <ul>
-                                        <li><a href="services.html">Jam Layanan</a></li>
-                                        <li><a href="service-details.html">Jenis Layanan</a></li>
-                                        <li><a href="service-details-2.html">Fasilitas</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Hubungi Kami</a></li> 
+                                @foreach($navigationRoutes as $key => $item)
+                                    @php $isActive = isMenuActive($item, $currentRoute); @endphp
+                                    <li class="{{ $isActive ? 'current' : '' }} {{ isset($item['children']) ? 'dropdown' : '' }}">
+                                        <a href="{{ $item['route'] !== '#' ? route($item['route']) : '#' }}">{{ $item['label'] }}</a>
+                                        @if(isset($item['children']))
+                                            <ul>
+                                                @foreach($item['children'] as $childKey => $child)
+                                                    <li><a href="{{ $child['route'] !== '#' ? route($child['route']) : '#' }}">{{ $child['label'] }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </nav>
@@ -79,7 +151,7 @@
         <div class="auto-container">
             <div class="outer-box">
                 <div class="logo-box">
-                    <figure class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo"><a href="index.html"><img src="/assets/images/logo.png" alt=""></a></figure>
                 </div>
                 <div class="menu-area">
                     <nav class="main-menu clearfix">

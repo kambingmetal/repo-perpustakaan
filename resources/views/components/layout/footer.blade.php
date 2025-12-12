@@ -4,7 +4,7 @@
     <div class="auto-container">
         <div class="footer-top">
             <div class="top-inner">
-                <figure class="footer-logo"><img src="assets/images/logo-2.png" alt=""></figure>
+                <figure class="footer-logo"><img style="width: 182px; height: 50px;" src="/assets/images/logo.png" alt=""></figure>
                 <ul class="footer-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>

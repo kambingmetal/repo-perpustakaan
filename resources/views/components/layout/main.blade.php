@@ -9,7 +9,7 @@
 <body>
 
     <div class="boxed_wrapper ltr">
-        <x-layout.preloader />
+        {{-- <x-layout.preloader /> --}}
         <x-layout.header />
         <x-layout.mobile-menu />
 

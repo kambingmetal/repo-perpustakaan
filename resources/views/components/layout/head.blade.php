@@ -38,3 +38,5 @@
 <link href="{{ asset('assets/css/module-css/research.css')}}" rel="stylesheet">
 <link href="{{ asset('assets/css/module-css/cta.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/css/module-css/contact.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/module-css/page-title.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/module-css/history.css')}}" rel="stylesheet">
