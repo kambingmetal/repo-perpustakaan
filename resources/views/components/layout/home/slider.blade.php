@@ -12,7 +12,7 @@
                         <h2>{{ $slider->title }}<span>{{ $slider->subtitle }}</span></h2>
                         <p>{{ $slider->description }}</p>
                         <div class="btn-box">
-                            <a href="{{ $slider->button_link }}" class="theme-btn">{{ $slider->button_text }} <span></span><span></span><span></span><span></span></a>
+                            <a href="{{ $slider->button_url }}" class="theme-btn">{{ $slider->button_text }} <span></span><span></span><span></span><span></span></a>
                         </div>
                     </div>
                 </div>
