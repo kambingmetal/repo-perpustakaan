@@ -51,4 +51,31 @@ class HomeController extends Controller
         
         return view('pages.collections', compact('collections', 'searchTerm'));
     }
+
+    public function informationsIndex(Request $request){
+        $query = Information::with('category');
+        
+        // Search functionality
+        if ($request->has('search') && !empty($request->search)) {
+            $searchTerm = $request->search;
+            $query->where('title', 'like', '%' . $searchTerm . '%')
+                  ->orWhere('overview', 'like', '%' . $searchTerm . '%');
+        }
+        
+        $informations = $query->orderBy('created_at', 'desc')->get();
+        $searchTerm = $request->get('search', '');
+        
+        return view('pages.informations', compact('informations', 'searchTerm'));
+    }
+
+    public function informationDetail($id){
+        $information = Information::with('category')->findOrFail($id);
+        $otherInformations = Information::with('category')
+            ->where('id', '!=', $id)
+            ->orderBy('created_at', 'desc')
+            ->limit(10)
+            ->get();
+        
+        return view('pages.information-detail', compact('information', 'otherInformations'));
+    }
 }

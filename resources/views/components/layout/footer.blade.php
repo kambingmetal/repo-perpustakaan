@@ -19,8 +19,8 @@
                     <li><a href="{{ route('home') }}">Beranda</a></li>
                     <li><a href="{{ route('profile.sejarah') }}">Tentang</a></li>
                     <li><a href="{{ route('profile.tim') }}">Tim</a></li>
-                    <li><a href="#">Layanan</a></li>
-                    <li><a href="#">Hubungi Kami</a></li>
+                    <li><a href="{{ route('layanan.jenis-layanan') }}">Layanan</a></li>
+                    <li><a href="{{ route('contact') }}">Hubungi Kami</a></li>
                 </ul>
             </div>
         </div>
