@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                    <div class="footer-widget links-widget ml_80">
+                    {{-- <div class="footer-widget links-widget ml_80">
                         <div class="widget-title">
                             <h3>Quick Link</h3>
                         </div>
@@ -58,10 +58,10 @@
                                 <li><a href="{{ route('profile.tim') }}">Tim Kami</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                    <div class="footer-widget links-widget">
+                    {{-- <div class="footer-widget links-widget">
                         <div class="widget-title">
                             <h3>Resources</h3>
                         </div>
@@ -74,7 +74,7 @@
                                 <li><a href="#">Hubungi Kami</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget footer-bottom">

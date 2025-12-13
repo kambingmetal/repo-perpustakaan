@@ -36,6 +36,7 @@ class ProfileCompanyPage extends Page
             'vision' => $this->record->vision,
             'mission' => $this->record->mission,
             'image' => $this->record->image,
+            'struktur_organisasi' => $this->record->struktur_organisasi,
             'social_media' => $this->record->social_media ?? [],
             'email' => $this->record->email,
             'phone' => $this->record->phone,
@@ -146,6 +147,20 @@ class ProfileCompanyPage extends Page
                             ->image()
                             ->disk('public')
                             ->directory('company')
+                            ->visibility('public')
+                            ->maxSize(2048)
+                            ->imageEditor()
+                            ->imagePreviewHeight('250')
+                            ->loadingIndicatorPosition('center')
+                            ->panelLayout('integrated')
+                            ->removeUploadedFileButtonPosition('right')
+                            ->uploadProgressIndicatorPosition('left')
+                            ->columnSpanFull(),
+                        Forms\Components\FileUpload::make('struktur_organisasi')
+                            ->label('Struktur Organisasi')
+                            ->image()
+                            ->disk('public')
+                            ->directory('company/struktur-organisasi')
                             ->visibility('public')
                             ->maxSize(2048)
                             ->imageEditor()

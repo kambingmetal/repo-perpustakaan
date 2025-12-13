@@ -23,6 +23,8 @@ class SettingPage extends Model
         'image_info',
         'banner',
         'footer_banner',
+        'cta_image',
+        'cta_url',
         'for_route',
         'updated_by'
     ];
@@ -38,7 +40,7 @@ class SettingPage extends Model
      */
     public static function getInstance($forRoute = null, $returnNullIfNotFound = false)
     {
-        if ($forRoute) {
+        if (!empty($forRoute)) {
             $setting = static::where('for_route', $forRoute)->first();
             if ($setting) {
                 return $setting;
@@ -49,7 +51,7 @@ class SettingPage extends Model
             }
         }
 
-        $setting = static::first();
+        $setting = static::whereNull('for_route')->first();
         
         if (!$setting) {
             $setting = static::create([
@@ -63,6 +65,8 @@ class SettingPage extends Model
                 'subtitle_info' => 'Informasi Tambahan',
                 'banner' => '',
                 'footer_banner' => '',
+                'cta_image' => '',
+                'cta_url' => '',
                 'updated_by' => auth()->id(),
             ]);
         }

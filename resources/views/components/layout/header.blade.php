@@ -72,7 +72,7 @@ $navigationRoutes = [
             ],
             'struktur' => [
                 'label' => 'Struktur Organisasi',
-                'route' => '#'
+                'route' => 'profile.struktur'
             ],
             'tim' => [
                 'label' => 'Tim Perpustakaan',
@@ -192,7 +192,7 @@ function isMenuActive($item, $currentRoute) {
                     </nav>
                 </div>
                 <div class="menu-right-content">
-                    <div class="search-box-outer search-toggler mr_25">
+                    {{-- <div class="search-box-outer search-toggler mr_25">
                         <i class="icon-2"></i>
                     </div>
                     <div class="language-picker js-language-picker mr_25" data-trigger-class="btn btn--subtle">
@@ -205,8 +205,8 @@ function isMenuActive($item, $currentRoute) {
                                 <option lang="it" value="italiano"></option>
                             </select>
                         </form>
-                    </div>
-                    <div class="btn-box"><a href="index.html">Account</a></div>
+                    </div> --}}
+                    {{-- <div class="btn-box"><a href="index.html">Account</a></div> --}}
                 </div>
             </div>
         </div>
@@ -233,7 +233,7 @@ function isMenuActive($item, $currentRoute) {
                     </nav>
                 </div>
                 <div class="menu-right-content">
-                    <div class="search-box-outer search-toggler mr_25">
+                    {{-- <div class="search-box-outer search-toggler mr_25">
                         <i class="icon-2"></i>
                     </div>
                     <div class="language-picker js-language-picker mr_25" data-trigger-class="btn btn--subtle">
@@ -247,7 +247,7 @@ function isMenuActive($item, $currentRoute) {
                             </select>
                         </form>
                     </div>
-                    <div class="btn-box"><a href="index.html">Account</a></div>
+                    <div class="btn-box"><a href="index.html">Account</a></div> --}}
                 </div>
             </div>
         </div>

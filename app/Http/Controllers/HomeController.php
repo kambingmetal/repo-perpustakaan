@@ -9,6 +9,7 @@ use App\Models\SettingPage;
 use App\Models\Partner;
 use App\Models\Galery;
 use App\Models\Information;
+use App\Models\Collection;
 
 class HomeController extends Controller
 {
@@ -20,6 +21,7 @@ class HomeController extends Controller
         $partners = Partner::all();
         $galeries = Galery::orderBy('created_at', 'desc')->limit(8)->get();
         $informations = Information::where('view_on_front', 1)->orderBy('created_at', 'desc')->get();
+        $collections = Collection::active()->ordered()->limit(10)->get();
 
         // config title
         $setting_page = SettingPage::select(
@@ -28,10 +30,25 @@ class HomeController extends Controller
                 'banner'
             )->first();
 
-        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations'));
+        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations', 'collections'));
     }
 
     public function contactIndex(){
         return view('pages.contact');
+    }
+
+    public function collectionsIndex(Request $request){
+        $query = Collection::active()->ordered();
+        
+        // Search functionality
+        if ($request->has('search') && !empty($request->search)) {
+            $searchTerm = $request->search;
+            $query->where('title', 'like', '%' . $searchTerm . '%');
+        }
+        
+        $collections = $query->get();
+        $searchTerm = $request->get('search', '');
+        
+        return view('pages.collections', compact('collections', 'searchTerm'));
     }
 }

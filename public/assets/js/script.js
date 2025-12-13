@@ -355,12 +355,15 @@
 
 	// clients-carousel
 	if ($('.clients-carousel').length) {
-		$('.clients-carousel').owlCarousel({
-			loop:true,
+		var clientsCarousel = $('.clients-carousel');
+		var itemCount = clientsCarousel.children().length;
+		
+		clientsCarousel.owlCarousel({
+			loop: itemCount > 6, // Only loop if we have more items than max display
 			margin:30,
 			nav:true,
 			smartSpeed: 1000,
-			autoplay: 6000,
+			autoplay: itemCount > 6 ? 6000 : false, // Only autoplay if looping
 			navText: [ '<span class="fal fa-angle-left"></span>', '<span class="fal fa-angle-right"></span>' ],
 			responsive:{
 				0:{
@@ -376,7 +379,7 @@
 					items:4
 				},			
 				1200:{
-					items:6
+					items: Math.min(6, itemCount) // Don't show more items than we have
 				}
 
 			}

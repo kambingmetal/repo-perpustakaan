@@ -60,8 +60,10 @@
         <x-layout.header />
         <x-layout.mobile-menu />
 
-        {{ $slot }}
-
+        <main class="main-content alternat-2">
+            {{ $slot }}
+            <x-layout.home.cta />
+        </main>
 
         <x-layout.footer />
     </div>

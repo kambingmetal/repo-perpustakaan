@@ -152,7 +152,28 @@ class SettingPage extends Page
                             ->columnSpanFull(),
                     ]),
 
-                Forms\Components\Section::make('Footer Banner')
+                Forms\Components\Section::make('Call To Action')
+                    ->schema([
+                        Forms\Components\FileUpload::make('cta_image')
+                            ->label('Banner Call To Action')
+                            ->image()
+                            ->disk('public')
+                            ->directory('banners')
+                            ->visibility('public')
+                            ->maxSize(2048)
+                            ->imageEditor()
+                            ->imagePreviewHeight('250')
+                            ->loadingIndicatorPosition('center')
+                            ->panelLayout('integrated')
+                            ->removeUploadedFileButtonPosition('right')
+                            ->uploadProgressIndicatorPosition('left')
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('cta_url')
+                            ->label('URL')
+                            ->url()
+                    ]),
+
+                Forms\Components\Section::make('Background Footer')
                     ->schema([
                         Forms\Components\FileUpload::make('footer_banner')
                             ->label('Banner Footer')

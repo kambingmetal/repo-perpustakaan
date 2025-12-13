@@ -5,11 +5,15 @@
 
 <!-- events-section -->
 <section class="events-section pt_120">
-    <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/events-bg.jpg);"></div>
+     @if ($globalSettingPage->image_info)
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url({{ asset('storage/' . $globalSettingPage->image_info) }});"></div>
+    @else
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(/assets/images/background/research-bg.jpg);"></div>
+    @endif
     <div class="auto-container">
         <div class="sec-title mb_70 centred sec-title-animation animation-style2">
-            <h2 class="title-animation">{{ $setting_page->title_info }}</h2>
-            <h4 class="sub-title-animation" style="">{{ $setting_page->subtitle_info }}</h4>
+            <h2 class="title-animation">{{ $globalSettingPage->title_info }}</h2>
+            <h4 class="sub-title-animation" style="">{{ $globalSettingPage->subtitle_info }}</h4>
         </div>
         <div class="row clearfix">
             @foreach($informations as $info)

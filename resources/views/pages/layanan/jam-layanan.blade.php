@@ -1,85 +1,82 @@
 <x-layout.main pageTitle="Jam Layanan">
-    <main class="main-content alternate-2">
-        <section class="page-title centred">
-            @if (!empty($globalSettingPage->banner))
-                <div class="bg-layer" style="background-image: url({{ asset('storage/' . $globalSettingPage->banner) }});"></div>
-            @else
-                <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
-            @endif
-            <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-53.png);"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <h2>Jam Layanan</h2>
-                    <ul class="bread-crumb">
-                        <li>Informasi jam operasional layanan kami</li>
-                    </ul>
-                </div>
+    <section class="page-title centred">
+        @if (!empty($globalSettingPage->banner))
+            <div class="bg-layer" style="background-image: url({{ asset('storage/' . $globalSettingPage->banner) }});"></div>
+        @else
+            <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
+        @endif
+        <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-53.png);"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h2>Jam Layanan</h2>
+                <ul class="bread-crumb">
+                    <li>Informasi jam operasional layanan kami</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="schedule-section pt_120 pb_180 centred">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <div class="col-lg-12">
-                        <div class="table-outer">
-                            <table class="pricing-table">
-                                <thead>
-                                    <tr>
-                                        <th class="table-header">Hari</th>
-                                        <th class="table-header">Jam Operasional</th>
-                                        <th class="table-header">Status</th>
+    <section class="schedule-section pt_120 pb_180 centred">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="table-outer">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th class="table-header">Hari</th>
+                                    <th class="table-header">Jam Operasional</th>
+                                    <th class="table-header">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($serviceHours as $index => $serviceHour)
+                                    <tr class="wow fadeInUp animated" data-wow-delay="{{ $index * 200 }}ms" data-wow-duration="1500ms">
+                                        <td class="table-item">
+                                            <h5>
+                                                {{ ucfirst($serviceHour->day) }}
+                                                @if($serviceHour->end_day && $serviceHour->end_day !== $serviceHour->day)
+                                                    - {{ ucfirst($serviceHour->end_day) }}
+                                                @endif
+                                            </h5>
+                                        </td>
+                                        <td class="table-item">
+                                            @if($serviceHour->is_closed)
+                                                <h5 class="closed">Tutup</h5>
+                                            @else
+                                                <h5 class="time">{{ \Carbon\Carbon::createFromFormat('H:i:s', $serviceHour->open_time)->format('H:i') }}</h5>
+                                                <span class="info">sampai</span>
+                                                <h5 class="time">{{ \Carbon\Carbon::createFromFormat('H:i:s', $serviceHour->close_time)->format('H:i') }}</h5>
+                                            @endif
+                                        </td>
+                                        <td class="table-item">
+                                            @if($serviceHour->is_closed)
+                                                <div class="btn theme-btn-two">Tutup</div>
+                                            @else
+                                                <div class="btn theme-btn">Buka</div>
+                                            @endif
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse($serviceHours as $index => $serviceHour)
-                                        <tr class="wow fadeInUp animated" data-wow-delay="{{ $index * 200 }}ms" data-wow-duration="1500ms">
-                                            <td class="table-item">
-                                                <h5>
-                                                    {{ ucfirst($serviceHour->day) }}
-                                                    @if($serviceHour->end_day && $serviceHour->end_day !== $serviceHour->day)
-                                                        - {{ ucfirst($serviceHour->end_day) }}
-                                                    @endif
-                                                </h5>
-                                            </td>
-                                            <td class="table-item">
-                                                @if($serviceHour->is_closed)
-                                                    <h5 class="closed">Tutup</h5>
-                                                @else
-                                                    <h5 class="time">{{ \Carbon\Carbon::createFromFormat('H:i:s', $serviceHour->open_time)->format('H:i') }}</h5>
-                                                    <span class="info">sampai</span>
-                                                    <h5 class="time">{{ \Carbon\Carbon::createFromFormat('H:i:s', $serviceHour->close_time)->format('H:i') }}</h5>
-                                                @endif
-                                            </td>
-                                            <td class="table-item">
-                                                @if($serviceHour->is_closed)
-                                                    <div class="btn theme-btn-two">Tutup</div>
-                                                @else
-                                                    <div class="btn theme-btn">Buka</div>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="3" class="table-item text-center">
-                                                <div class="empty-content">
-                                                    <figure class="image">
-                                                        <img src="/assets/images/icons/icon-1.png" alt="">
-                                                    </figure>
-                                                    <h5>Belum ada jadwal layanan</h5>
-                                                    <span class="info">Jadwal layanan akan segera tersedia</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
-                        </div>
+                                @empty
+                                    <tr>
+                                        <td colspan="3" class="table-item text-center">
+                                            <div class="empty-content">
+                                                <figure class="image">
+                                                    <img src="/assets/images/icons/icon-1.png" alt="">
+                                                </figure>
+                                                <h5>Belum ada jadwal layanan</h5>
+                                                <span class="info">Jadwal layanan akan segera tersedia</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 </x-layout.main>
 
 <style>

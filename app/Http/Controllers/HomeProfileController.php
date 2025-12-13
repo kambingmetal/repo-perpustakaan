@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\History;
+use App\Models\ProfileCompany;
 
 class HomeProfileController extends Controller
 {
@@ -18,5 +19,10 @@ class HomeProfileController extends Controller
 
     public function visiMisiIndex() {
         return view('pages.profile.visi-misi');
+    }
+
+    public function strukturIndex() {
+        $profileCompany = ProfileCompany::getInstance();
+        return view('pages.profile.struktur', compact('profileCompany'));
     }
 }

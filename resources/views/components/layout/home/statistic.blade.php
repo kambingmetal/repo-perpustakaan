@@ -2,14 +2,18 @@
 
 <!-- statistic-section -->
 <section class="funfact-section pt_130 pb_120 centred">
-    <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(assets/images/background/funfact-bg.jpg);"></div>
+    @if ($globalSettingPage->image_statistic)
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url({{ asset('storage/' . $globalSettingPage->image_statistic) }});"></div>
+    @else
+        <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(/assets/images/background/funfact-bg.jpg);"></div>
+    @endif
     <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-7.png);"></div>
+        <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-7.png);"></div>
     </div>
     <div class="auto-container">
         <div class="sec-title light mb_70 sec-title-animation animation-style2">
-            <h2 class="title-animation">{{ $setting_page->title_statistic }}</h2>
-            <h4 class="sub-title-animation" style="color: white">{{ $setting_page->subtitle_statistic }}</h4>
+            <h2 class="title-animation">{{ $globalSettingPage->title_statistic }}</h2>
+            <h4 class="sub-title-animation" style="color: white">{{ $globalSettingPage->subtitle_statistic }}</h4>
         </div>
         <div class="row clearfix">
             @foreach($statistics as $statistic)
