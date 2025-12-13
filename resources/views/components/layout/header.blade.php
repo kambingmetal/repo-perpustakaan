@@ -1,5 +1,55 @@
 @php
+use App\Models\ServiceHour;
+
 $currentRoute = Route::currentRouteName();
+
+// Get service hours data
+$serviceHours = ServiceHour::orderBy('day', 'asc')->get();
+$serviceHourText = 'Jam Buka: Hubungi Kami';
+
+if ($serviceHours->isNotEmpty()) {
+    // Group consecutive days with same hours
+    $groupedHours = [];
+    $currentGroup = null;
+    
+    foreach ($serviceHours as $hour) {
+        if ($hour->is_closed) {
+            if ($currentGroup) {
+                $groupedHours[] = $currentGroup;
+                $currentGroup = null;
+            }
+            continue;
+        }
+        
+        $timeRange = date('H.i', strtotime($hour->open_time)) . ' - ' . date('H.i', strtotime($hour->close_time));
+        
+        if (!$currentGroup || $currentGroup['time'] !== $timeRange) {
+            if ($currentGroup) {
+                $groupedHours[] = $currentGroup;
+            }
+            $currentGroup = [
+                'start_day' => $hour->day,
+                'end_day' => $hour->end_day ?: $hour->day,
+                'time' => $timeRange
+            ];
+        } else {
+            $currentGroup['end_day'] = $hour->end_day ?: $hour->day;
+        }
+    }
+    
+    if ($currentGroup) {
+        $groupedHours[] = $currentGroup;
+    }
+    
+    if (!empty($groupedHours)) {
+        $firstGroup = $groupedHours[0];
+        $dayRange = $firstGroup['start_day'];
+        if ($firstGroup['end_day'] && $firstGroup['end_day'] !== $firstGroup['start_day']) {
+            $dayRange .= ' - ' . $firstGroup['end_day'];
+        }
+        $serviceHourText = 'Jam Buka: ' . $dayRange . ' ' . $firstGroup['time'];
+    }
+}
 
 $navigationRoutes = [
     'home' => [
@@ -18,7 +68,7 @@ $navigationRoutes = [
             ],
             'visi-misi' => [
                 'label' => 'Visi dan Misi',
-                'route' => '#'
+                'route' => 'profile.visi-misi'
             ],
             'struktur' => [
                 'label' => 'Struktur Organisasi',
@@ -26,32 +76,32 @@ $navigationRoutes = [
             ],
             'tim' => [
                 'label' => 'Tim Perpustakaan',
-                'route' => '#'
+                'route' => 'profile.tim'
             ]
         ]
     ],
-    'services' => [
+    'layanan' => [
         'label' => 'Layanan dan Fasilitas',
         'route' => '#',
-        'routes' => ['services.jam-layanan', 'services.jenis-layanan', 'services.fasilitas'],
+        'routes' => ['layanan.jam-layanan', 'layanan.jenis-layanan', 'layanan.fasilitas'],
         'children' => [
             'jam-layanan' => [
                 'label' => 'Jam Layanan',
-                'route' => '#'
+                'route' => 'layanan.jam-layanan'
             ],
             'jenis-layanan' => [
                 'label' => 'Jenis Layanan',
-                'route' => '#'
+                'route' => 'layanan.jenis-layanan'
             ],
             'fasilitas' => [
                 'label' => 'Fasilitas',
-                'route' => '#'
+                'route' => 'layanan.fasilitas'
             ]
         ]
     ],
     'contact' => [
         'label' => 'Hubungi Kami',
-        'route' => '#',
+        'route' => 'contact',
         'routes' => ['contact']
     ]
 ];
@@ -81,12 +131,20 @@ function isMenuActive($item, $currentRoute) {
     <div class="header-top">
         <div class="auto-container">
             <div class="top-inner">
-                <p><i class="icon-1"></i>Open Hours: Mon - Fri 8.00 am - 6.00 pm</p>
+                <p><i class="icon-1"></i>{{ $serviceHourText }}</p>
                 <ul class="social-links">
                     <li><span>On Social:</span></li>
-                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                    @if($globalProfile->social_media && count($globalProfile->social_media) > 0)
+                        @foreach($globalProfile->social_media as $social)
+                            <li><a href="{{ $social['url'] }}" target="_blank" title="{{ $social['name'] }}"><i class="{{ $social['icon'] }}"></i></a></li>
+                        @endforeach
+                    @else
+                        {{-- Default social links if none configured --}}
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -96,7 +154,15 @@ function isMenuActive($item, $currentRoute) {
         <div class="auto-container">
             <div class="outer-box">
                 <div class="logo-box">
-                    <figure class="logo"><a href="{{ route('home') }}"><img src="/assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo">
+                        <a href="{{ route('home') }}">
+                            @if($globalProfile->image)
+                                <img src="{{ asset('storage/' . $globalProfile->image) }}" alt="{{ $globalProfile->title }}">
+                            @else
+                                <img src="/assets/images/logo.png" alt="{{ $globalProfile->title }}">
+                            @endif
+                        </a>
+                    </figure>
                 </div>
                 <div class="menu-area">
                     <!--Mobile Navigation Toggler-->
@@ -151,7 +217,15 @@ function isMenuActive($item, $currentRoute) {
         <div class="auto-container">
             <div class="outer-box">
                 <div class="logo-box">
-                    <figure class="logo"><a href="index.html"><img src="/assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo">
+                        <a href="{{ route('home') }}">
+                            @if($globalProfile->image)
+                                <img src="{{ asset('storage/' . $globalProfile->image) }}" alt="{{ $globalProfile->title }}">
+                            @else
+                                <img src="/assets/images/logo.png" alt="{{ $globalProfile->title }}">
+                            @endif
+                        </a>
+                    </figure>
                 </div>
                 <div class="menu-area">
                     <nav class="main-menu clearfix">

@@ -9,7 +9,6 @@ use App\Models\SettingPage;
 use App\Models\Partner;
 use App\Models\Galery;
 use App\Models\Information;
-use App\Models\ProfileCompany;
 
 class HomeController extends Controller
 {
@@ -17,7 +16,6 @@ class HomeController extends Controller
 
         //data
         $sliders = Slider::orderBy('order', 'asc')->get();
-        $profile = ProfileCompany::first();
         $statistics = Statistic::all();
         $partners = Partner::all();
         $galeries = Galery::orderBy('created_at', 'desc')->limit(8)->get();
@@ -30,6 +28,10 @@ class HomeController extends Controller
                 'banner'
             )->first();
 
-        return view('index', compact('sliders', 'profile', 'statistics', 'setting_page', 'partners', 'galeries','informations'));
+        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations'));
+    }
+
+    public function contactIndex(){
+        return view('pages.contact');
     }
 }

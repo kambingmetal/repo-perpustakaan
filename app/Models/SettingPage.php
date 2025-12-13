@@ -22,6 +22,8 @@ class SettingPage extends Model
         'subtitle_info',
         'image_info',
         'banner',
+        'footer_banner',
+        'for_route',
         'updated_by'
     ];
 
@@ -34,8 +36,19 @@ class SettingPage extends Model
      * Get the singleton instance of ProfileCompany
      * Create if doesn't exist
      */
-    public static function getInstance()
+    public static function getInstance($forRoute = null, $returnNullIfNotFound = false)
     {
+        if ($forRoute) {
+            $setting = static::where('for_route', $forRoute)->first();
+            if ($setting) {
+                return $setting;
+            }
+
+            if ($returnNullIfNotFound) {
+                return null;
+            }
+        }
+
         $setting = static::first();
         
         if (!$setting) {
@@ -49,6 +62,7 @@ class SettingPage extends Model
                 'title_info' => 'Info',
                 'subtitle_info' => 'Informasi Tambahan',
                 'banner' => '',
+                'footer_banner' => '',
                 'updated_by' => auth()->id(),
             ]);
         }

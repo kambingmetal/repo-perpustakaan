@@ -11,4 +11,12 @@ class HomeProfileController extends Controller
         $histories = History::active()->ordered()->get();
         return view('pages.profile.sejarah', compact('histories'));
     }
+
+    public function teamIndex() {
+        return view('pages.profile.tim');
+    }
+
+    public function visiMisiIndex() {
+        return view('pages.profile.visi-misi');
+    }
 }

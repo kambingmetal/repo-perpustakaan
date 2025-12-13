@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ServiceHourResource\Pages;
 
 use App\Filament\Resources\ServiceHourResource;
+use App\Filament\Widgets\DynamicPageSettingWidget;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
@@ -14,6 +15,15 @@ class ListServiceHours extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DynamicPageSettingWidget::make([
+                'forRoute' => 'layanan.jam-layanan'
+            ])
         ];
     }
 }

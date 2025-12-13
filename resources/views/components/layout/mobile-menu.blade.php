@@ -4,23 +4,43 @@
     <div class="close-btn"><i class="fas fa-times"></i></div>
     
     <nav class="menu-box">
-        <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
+        <div class="nav-logo">
+            <a href="{{ route('home') }}">
+                @if($globalProfile->image)
+                    <img src="{{ asset('storage/' . $globalProfile->image) }}" alt="{{ $globalProfile->title }}" title="{{ $globalProfile->title }}">
+                @else
+                    <img src="/assets/images/logo.png" alt="{{ $globalProfile->title }}" title="{{ $globalProfile->title }}">
+                @endif
+            </a>
+        </div>
         <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
         <div class="contact-info">
             <h4>Contact Info</h4>
             <ul>
-                <li>Chicago 12, Melborne City, USA</li>
-                <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                <li><a href="mailto:info@example.com">info@example.com</a></li>
+                @if($globalProfile->email)
+                    <li><a href="mailto:{{ $globalProfile->email }}">{{ $globalProfile->email }}</a></li>
+                @endif
+                @if($globalProfile->phone)
+                    <li><a href="tel:{{ $globalProfile->phone }}">{{ $globalProfile->phone }}</a></li>
+                @endif
+                @if(!$globalProfile->email && !$globalProfile->phone)
+                    <li>Hubungi kami untuk informasi lebih lanjut</li>
+                @endif
             </ul>
         </div>
         <div class="social-links">
             <ul class="clearfix">
-                <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                @if($globalProfile->social_media && count($globalProfile->social_media) > 0)
+                    @foreach($globalProfile->social_media as $social)
+                        <li><a href="{{ $social['url'] }}" target="_blank" title="{{ $social['name'] }}"><span class="{{ $social['icon'] }}"></span></a></li>
+                    @endforeach
+                @else
+                    {{-- Default social links if none configured --}}
+                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                @endif
             </ul>
         </div>
     </nav>

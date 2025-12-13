@@ -42,6 +42,7 @@ class SettingPage extends Page
             'subtitle_info' => $this->record->subtitle_info,
             'image_info' => $this->record->image_info,
             'banner' => $this->record->banner,
+            'footer_banner' => $this->record->footer_banner,
         ]);
     }
     
@@ -149,6 +150,25 @@ class SettingPage extends Page
                             ->removeUploadedFileButtonPosition('right')
                             ->uploadProgressIndicatorPosition('left')
                             ->columnSpanFull(),
+                    ]),
+
+                Forms\Components\Section::make('Footer Banner')
+                    ->schema([
+                        Forms\Components\FileUpload::make('footer_banner')
+                            ->label('Banner Footer')
+                            ->image()
+                            ->disk('public')
+                            ->directory('banners')
+                            ->visibility('public')
+                            ->maxSize(2048)
+                            ->imageEditor()
+                            ->imagePreviewHeight('250')
+                            ->loadingIndicatorPosition('center')
+                            ->panelLayout('integrated')
+                            ->removeUploadedFileButtonPosition('right')
+                            ->uploadProgressIndicatorPosition('left')
+                            ->columnSpanFull()
+                            ->helperText('Banner yang akan ditampilkan di bagian footer website'),
                     ]),
             ])
             ->statePath('data');

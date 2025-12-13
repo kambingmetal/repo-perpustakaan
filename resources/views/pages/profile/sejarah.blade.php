@@ -1,13 +1,17 @@
-<x-layout.main>
+<x-layout.main pageTitle="Sejarah">
     <main class="main-content alternate-2">
         <section class="page-title centred">
-            <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
+            @if (!empty($settingPage->banner))
+                <div class="bg-layer" style="background-image: url({{ asset('storage/' . $settingPage->banner) }});"></div>
+            @else
+                <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
+            @endif
             <div class="pattern-layer" style="background-image: url(/assets/images/shape/shape-53.png);"></div>
             <div class="auto-container">
                 <div class="content-box">
                     <h2>Sejarah Kami</h2>
                     <ul class="bread-crumb">
-                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="{{ route('home') }}">Beranda</a></li>
                         <li>-</li>
                         <li>Sejarah Kami</li>
                     </ul>

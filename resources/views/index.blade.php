@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.main pageTitle="Beranda">
         <!-- main-content -->
         <main class="main-content alternat-2">
            <x-layout.home.slider :sliders="$sliders" />
@@ -43,7 +43,7 @@
             <!-- feature-section end -->
 
 
-            <x-layout.home.profile :profile="$profile" />
+            <x-layout.home.profile :profile="$globalProfile" />
 
             <x-layout.home.statistic :statistics="$statistics" :setting_page="$setting_page" />
 

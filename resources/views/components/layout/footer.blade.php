@@ -1,16 +1,26 @@
 <!-- main-footer -->
 <footer class="main-footer alternat-2">
-    <div class="bg-layer" style="background-image: url(assets/images/background/footer-bg.jpg);"></div>
+    @if($globalSettingPage->footer_banner)
+        <div class="bg-layer" style="background-image: url({{ asset('storage/' . $globalSettingPage->footer_banner) }});"></div>
+    @else
+        <div class="bg-layer" style="background-image: url(assets/images/background/footer-bg.jpg);"></div>
+    @endif
     <div class="auto-container">
         <div class="footer-top">
             <div class="top-inner">
-                <figure class="footer-logo"><img style="width: 182px; height: 50px;" src="/assets/images/logo.png" alt=""></figure>
+                <figure class="footer-logo">
+                    @if($globalProfile->image)
+                        <img style="width: 182px; height: 50px;" src="{{ asset('storage/' . $globalProfile->image) }}" alt="{{ $globalProfile->title }}">
+                    @else
+                        <img style="width: 182px; height: 50px;" src="/assets/images/logo.png" alt="{{ $globalProfile->title }}">
+                    @endif
+                </figure>
                 <ul class="footer-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="faq.html">Faq’s</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}">Beranda</a></li>
+                    <li><a href="{{ route('profile.sejarah') }}">Tentang</a></li>
+                    <li><a href="{{ route('profile.tim') }}">Tim</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
                 </ul>
             </div>
         </div>
@@ -19,13 +29,17 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget about-widget">
                         <div class="widget-title">
-                            <h3>About</h3>
+                            <h3>Tentang Kami</h3>
                         </div>
                         <div class="widget-content">
-                            <p>The Department of Chemical Research Support is a central research resource facility of the Institute of Science.</p>
+                            <p>{{ $globalProfile->description ?: 'Perpustakaan yang menyediakan berbagai layanan dan fasilitas untuk mendukung kegiatan belajar dan penelitian.' }}</p>
                             <ul class="info clearfix">
-                                <li><a href="mailto:info@example.com">info@example.com</a></li>
-                                <li><a href="tel:911202290305">(+91) 120-229-0305</a></li>
+                                @if($globalProfile->email)
+                                    <li><a href="mailto:{{ $globalProfile->email }}">{{ $globalProfile->email }}</a></li>
+                                @endif
+                                @if($globalProfile->phone)
+                                    <li><a href="tel:{{ $globalProfile->phone }}">{{ $globalProfile->phone }}</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -37,11 +51,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="about.html">About Company</a></li>
-                                <li><a href="index.html">Our History</a></li>
-                                <li><a href="service.html">Services</a></li>
-                                <li><a href="index.html">How It Works</a></li>
-                                <li><a href="team.html">Team Members</a></li>
+                                <li><a href="{{ route('profile.sejarah') }}">Tentang Perusahaan</a></li>
+                                <li><a href="{{ route('profile.sejarah') }}">Sejarah Kami</a></li>
+                                <li><a href="#">Layanan</a></li>
+                                <li><a href="#">Fasilitas</a></li>
+                                <li><a href="{{ route('profile.tim') }}">Tim Kami</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,11 +67,11 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="research.html">Researches</a></li>
-                                <li><a href="events.html">Events</a></li>
-                                <li><a href="index.html">Support</a></li>
-                                <li><a href="blog.html">Our Blog</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="#">Koleksi</a></li>
+                                <li><a href="#">Galeri</a></li>
+                                <li><a href="#">Informasi</a></li>
+                                <li><a href="#">Berita</a></li>
+                                <li><a href="#">Hubungi Kami</a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,10 +83,17 @@
                         </div>
                         <div class="widget-content">
                             <ul class="social-links">
-                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="index.html"><i class="fab fa-dribbble"></i></a></li>
+                                @if($globalProfile->social_media && count($globalProfile->social_media) > 0)
+                                    @foreach($globalProfile->social_media as $social)
+                                        <li><a href="{{ $social['url'] }}" target="_blank" title="{{ $social['name'] }}"><i class="{{ $social['icon'] }}"></i></a></li>
+                                    @endforeach
+                                @else
+                                    {{-- Default social links if none configured --}}
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -81,7 +102,7 @@
         </div>
         <div class="footer-bottom">
             <div class="bottom-inner">
-                <div class="copyright"><p>Copyright &copy; 2025 <a href="index.html">Labout</a>, Inc. All Rights Reserved</p></div>
+                <div class="copyright"><p>Copyright &copy; 2025 <a href="{{ route('home') }}">{{ $globalProfile->title }}</a>. All Rights Reserved</p></div>
             </div>
         </div>
     </div>

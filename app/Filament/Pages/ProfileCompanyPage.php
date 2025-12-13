@@ -36,6 +36,10 @@ class ProfileCompanyPage extends Page
             'vision' => $this->record->vision,
             'mission' => $this->record->mission,
             'image' => $this->record->image,
+            'social_media' => $this->record->social_media ?? [],
+            'email' => $this->record->email,
+            'phone' => $this->record->phone,
+            'address' => $this->record->address,
         ]);
     }
     
@@ -57,19 +61,84 @@ class ProfileCompanyPage extends Page
                             ->label('Sejarah Perusahaan')
                             ->rows(4)
                             ->columnSpanFull(),
+                        Forms\Components\Textarea::make('address')
+                            ->label('Alamat')
+                            ->rows(3)
+                            ->columnSpanFull(),
                     ]),
                     
                 Forms\Components\Section::make('Visi & Misi')
                     ->schema([
-                        Forms\Components\Textarea::make('vision')
+                        Forms\Components\RichEditor::make('vision')
                             ->label('Visi')
-                            ->rows(3),
-                        Forms\Components\Textarea::make('mission')
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'underline',
+                                'bulletList',
+                                'orderedList',
+                                'link',
+                                'undo',
+                                'redo',
+                            ])
+                            ->columnSpanFull(),
+                        Forms\Components\RichEditor::make('mission')
                             ->label('Misi')
-                            ->rows(3),
+                            ->toolbarButtons([
+                                'bold',
+                                'italic',
+                                'underline',
+                                'bulletList',
+                                'orderedList',
+                                'link',
+                                'undo',
+                                'redo',
+                            ])
+                            ->columnSpanFull(),
+                    ]),
+                    
+                Forms\Components\Section::make('Informasi Kontak')
+                    ->schema([
+                        Forms\Components\TextInput::make('email')
+                            ->label('Email Perusahaan')
+                            ->email()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('phone')
+                            ->label('Nomor Telepon')
+                            ->tel()
+                            ->maxLength(255),
                     ])
                     ->columns(2),
-                    
+
+                Forms\Components\Section::make('Social Media')
+                    ->schema([
+                        Forms\Components\Repeater::make('social_media')
+                            ->label('Social Media')
+                            ->schema([
+                                Forms\Components\TextInput::make('name')
+                                    ->label('Nama Platform')
+                                    ->placeholder('Facebook, Instagram, Twitter, dll')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\TextInput::make('icon')
+                                    ->label('Kelas Icon')
+                                    ->placeholder('fab fa-facebook-f, fab fa-instagram, dll')
+                                    ->helperText('Gunakan kelas Font Awesome')
+                                    ->required()
+                                    ->maxLength(255),
+                                Forms\Components\TextInput::make('url')
+                                    ->label('URL Link')
+                                    ->url()
+                                    ->required()
+                                    ->maxLength(500),
+                            ])
+                            ->columns(3)
+                            ->defaultItems(0)
+                            ->addActionLabel('Tambah Social Media')
+                            ->reorderableWithButtons()
+                            ->collapsible(),
+                    ]),
+
                 Forms\Components\Section::make('Logo/Gambar Perusahaan')
                     ->schema([
                         Forms\Components\FileUpload::make('image')

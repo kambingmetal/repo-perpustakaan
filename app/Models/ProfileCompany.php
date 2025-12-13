@@ -15,7 +15,15 @@ class ProfileCompany extends Model
         'vision',
         'mission',
         'image',
+        'social_media',
+        'email',
+        'phone',
+        'address',
         'updated_by'
+    ];
+
+    protected $casts = [
+        'social_media' => 'array',
     ];
 
     public function updater()
@@ -39,6 +47,10 @@ class ProfileCompany extends Model
                 'vision' => 'Visi perusahaan',
                 'mission' => 'Misi perusahaan',
                 'image' => '',
+                'social_media' => [],
+                'email' => '',
+                'phone' => '',
+                'address' => '',
                 'updated_by' => auth()->id(),
             ]);
         }

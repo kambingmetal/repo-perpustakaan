@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\HistoryResource\Pages;
+namespace App\Filament\Resources\TeamResource\Pages;
 
-use App\Filament\Resources\HistoryResource;
+use App\Filament\Resources\TeamResource;
 use App\Filament\Widgets\DynamicPageSettingWidget;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListHistories extends ListRecords
+class ListTeams extends ListRecords
 {
-    protected static string $resource = HistoryResource::class;
+    protected static string $resource = TeamResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -22,7 +22,7 @@ class ListHistories extends ListRecords
     {
         return [
             DynamicPageSettingWidget::make([
-                'forRoute' => 'profile.sejarah'
+                'forRoute' => 'profile.tim'
             ])
         ];
     }

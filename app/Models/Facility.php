@@ -11,4 +11,10 @@ class Facility extends Model
         'description',
         'icon',
     ];
+
+    public function getIconClassAttribute()
+    {
+        // If icon is provided, use it, otherwise use default icon
+        return $this->icon ?: 'icon-12';
+    }
 }
