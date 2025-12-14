@@ -139,6 +139,10 @@ function isMenuActive($item, $currentRoute) {
         color: #ffffff !important;
     }
 
+    .sticky-header .main-menu .navigation > li.current > a{
+        color: var(--theme-color) !important;
+    }
+
     .main-header .header-lower .outer-box:before {
         background: #ffffff !important;
     }
