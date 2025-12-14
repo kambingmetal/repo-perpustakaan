@@ -1,6 +1,6 @@
 <x-layout.main pageTitle="Sejarah">
     <section class="page-title centred">
-        @if (!empty($settingPage->banner))
+        @if (!empty($globalSettingPage->banner))
             <div class="bg-layer" style="background-image: url({{ asset('storage/' . $settingPage->banner) }});"></div>
         @else
             <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
