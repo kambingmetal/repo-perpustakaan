@@ -87,4 +87,10 @@ class HomeController extends Controller
         
         return view('pages.information-detail', compact('information', 'otherInformations'));
     }
+
+    public function galleriesIndex(Request $request){
+        $galeries = Galery::with('category')->orderBy('created_at', 'desc')->get();
+        
+        return view('pages.galleries', compact('galeries'));
+    }
 }

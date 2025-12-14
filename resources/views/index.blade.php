@@ -13,7 +13,7 @@
                                 <div class='r-hex'><div class='r-hex-inner'></div></div>
                                 <div class="icon"><i class="icon-4"></i></div>
                             </div>
-                            <h3 style="font-size: 72px; margin-top:30px"><a href="index.html" class="py-4">OPAC</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px"><a href="index.html" class="py-4">OPAC</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">
@@ -22,7 +22,7 @@
                                 <div class='r-hex'><div class='r-hex-inner'></div></div>
                                 <div class="icon"><i class="icon-5"></i></div>
                             </div>
-                            <h3 style="font-size: 72px; margin-top:30px"><a href="index.html" class="py-4">Repository</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px"><a href="index.html" class="py-4">Repository</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">

@@ -103,6 +103,11 @@ $navigationRoutes = [
             ]
         ]
     ],
+    'galleries' => [
+        'label' => 'Galeri',
+        'route' => 'galleries',
+        'routes' => ['galleries']
+    ],
     'contact' => [
         'label' => 'Hubungi Kami',
         'route' => 'contact',

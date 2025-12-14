@@ -33,35 +33,28 @@
                         </div>
                         <div class="widget-content">
                             <p>{!! substr($globalProfile->description, 0, 200) . '... <a href="#profile">Read More</a>' ?: 'Perpustakaan yang menyediakan berbagai layanan dan fasilitas untuk mendukung kegiatan belajar dan penelitian.' !!}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget links-widget ml_80">
+                        <div class="widget-title">
+                            <h3>Kontak Kami</h3>
+                        </div>
+                        <div class="widget-content">
                             <ul class="info clearfix">
                                 @if($globalProfile->email)
-                                    <li><a href="mailto:{{ $globalProfile->email }}">{{ $globalProfile->email }}</a></li>
+                                    <li><i class="fas fa-envelope" style="color: white; margin-right: 10px;"></i><a href="mailto:{{ $globalProfile->email }}" style="color: white;">{{ $globalProfile->email }}</a></li>
                                 @endif
                                 @if($globalProfile->phone)
-                                    <li><a href="tel:{{ $globalProfile->phone }}">{{ $globalProfile->phone }}</a></li>
+                                    <li><i class="fas fa-phone" style="color: white; margin-right: 10px;"></i><a href="tel:{{ $globalProfile->phone }}" style="color: white;">{{ $globalProfile->phone }}</a></li>
                                 @endif
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                    {{-- <div class="footer-widget links-widget ml_80">
-                        <div class="widget-title">
-                            <h3>Quick Link</h3>
-                        </div>
-                        <div class="widget-content">
-                            <ul class="links-list clearfix">
-                                <li><a href="{{ route('profile.sejarah') }}">Tentang Perusahaan</a></li>
-                                <li><a href="{{ route('profile.sejarah') }}">Sejarah Kami</a></li>
-                                <li><a href="#">Layanan</a></li>
-                                <li><a href="#">Fasilitas</a></li>
-                                <li><a href="{{ route('profile.tim') }}">Tim Kami</a></li>
-                            </ul>
-                        </div>
-                    </div> --}}
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                    {{-- <div class="footer-widget links-widget">
+                {{-- <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                    <div class="footer-widget links-widget">
                         <div class="widget-title">
                             <h3>Resources</h3>
                         </div>
@@ -74,10 +67,10 @@
                                 <li><a href="#">Hubungi Kami</a></li>
                             </ul>
                         </div>
-                    </div> --}}
-                </div>
+                    </div>
+                </div> --}}
                 <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                    <div class="footer-widget footer-bottom">
+                    <div class="footer-widget footer-bottom" style="padding-top: 0;">
                         <div class="widget-title">
                             <h3>Follow Us On</h3>
                         </div>
@@ -100,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="text-align: center;">
             <div class="bottom-inner">
                 <div class="copyright"><p>Copyright &copy; 2025 <a href="{{ route('home') }}">{{ $globalProfile->title }}</a>. All Rights Reserved</p></div>
             </div>

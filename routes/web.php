@@ -8,6 +8,7 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store']
 Route::get('/koleksi', [App\Http\Controllers\HomeController::class, 'collectionsIndex'])->name('collections');
 Route::get('/informasi', [App\Http\Controllers\HomeController::class, 'informationsIndex'])->name('informations');
 Route::get('/informasi/{id}', [App\Http\Controllers\HomeController::class, 'informationDetail'])->name('information.detail');
+Route::get('/galeri', [App\Http\Controllers\HomeController::class, 'galleriesIndex'])->name('galleries');
 Route::get('/profile/sejarah', [App\Http\Controllers\HomeProfileController::class, 'sejarahIndex'])->name('profile.sejarah');
 Route::get('/profile/visi-misi', [App\Http\Controllers\HomeProfileController::class, 'visiMisiIndex'])->name('profile.visi-misi');
 Route::get('/profile/tim', [App\Http\Controllers\HomeProfileController::class, 'teamIndex'])->name('profile.tim');

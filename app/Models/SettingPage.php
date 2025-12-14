@@ -26,7 +26,13 @@ class SettingPage extends Model
         'cta_image',
         'cta_url',
         'for_route',
-        'updated_by'
+        'updated_by',
+        // SEO Fields
+        'site_description',
+        'meta_keyword',
+        'meta_description',
+        'favicon',
+        'og_image',
     ];
 
     public function updater()

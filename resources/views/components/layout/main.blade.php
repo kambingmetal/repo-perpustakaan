@@ -12,9 +12,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <title>{{ $pageTitle ? $pageTitle . ' - ' : '' }}{{ $title }}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ $globalSettingPage->meta_description ?? $globalSettingPage->site_description ?? 'Perpustakaan Digital Terdepan di Indonesia' }}">
+    <meta name="keywords" content="{{ $globalSettingPage->meta_keyword ?? 'perpustakaan, digital, buku, koleksi, indonesia' }}">
+    <meta name="author" content="{{ $globalProfile->title ?? 'Perpustakaan Digital' }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $pageTitle ? $pageTitle . ' - ' : '' }}{{ $title }}">
+    <meta property="og:description" content="{{ $globalSettingPage->meta_description ?? $globalSettingPage->site_description ?? 'Perpustakaan Digital Terdepan di Indonesia' }}">
+    @if($globalSettingPage->og_image)
+        <meta property="og:image" content="{{ Storage::url($globalSettingPage->og_image) }}">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+    @endif
+    <meta property="og:site_name" content="{{ $globalProfile->title ?? 'Perpustakaan Digital' }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $pageTitle ? $pageTitle . ' - ' : '' }}{{ $title }}">
+    <meta name="twitter:description" content="{{ $globalSettingPage->meta_description ?? $globalSettingPage->site_description ?? 'Perpustakaan Digital Terdepan di Indonesia' }}">
+    @if($globalSettingPage->og_image)
+        <meta name="twitter:image" content="{{ Storage::url($globalSettingPage->og_image) }}">
+    @endif
 
     <!-- Fav Icon -->
-    <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
+    @if($globalSettingPage->favicon)
+        <link rel="icon" href="{{ Storage::url($globalSettingPage->favicon) }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ Storage::url($globalSettingPage->favicon) }}" type="image/x-icon">
+    @else
+        <link rel="icon" href="{{ asset('/assets/images/favicon.png') }}" type="image/x-icon">
+    @endif
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">

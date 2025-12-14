@@ -1,6 +1,6 @@
 <x-layout.main pageTitle="Koleksi Buku">
     <section class="page-title centred">
-        @if (!empty($globalSettingPage->banner))
+        @if (!empty($settingPage->banner))
             <div class="bg-layer" style="background-image: url({{ asset('storage/' . $settingPage->banner) }});"></div>
         @else
             <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
@@ -66,11 +66,11 @@
                                             @if($collection->image)
                                                 <img src="{{ asset('storage/' . $collection->image) }}" 
                                                      alt="{{ $collection->title }}"
-                                                     style="width: 100%; height: 300px; object-fit: contain; background-color: #f8f9fa; transition: transform 0.3s ease;">
+                                                     style="width: 100%; height: 300px; object-fit: cover; background-color: #f8f9fa; transition: transform 0.3s ease;">
                                             @else
-                                                <img src="https://via.placeholder.com/300x400/4A90E2/FFFFFF?text={{ urlencode($collection->title) }}" 
+                                                <img src="https://via.placeholder.com/300x300/4A90E2/FFFFFF?text={{ urlencode($collection->title) }}" 
                                                      alt="{{ $collection->title }}"
-                                                     style="width: 100%; height: 300px; object-fit: contain; background-color: #f8f9fa; transition: transform 0.3s ease;">
+                                                     style="width: 100%; height: 300px; object-fit: cover; background-color: #f8f9fa; transition: transform 0.3s ease;">
                                             @endif
                                         </figure>
                                     </div>

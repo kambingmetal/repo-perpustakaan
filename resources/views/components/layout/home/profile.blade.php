@@ -18,10 +18,10 @@
                             <div class="shape-2" style="background-image: url({{ asset('assets/images/shape/shape-3.png')}});"></div>
                         </div>
                         <figure class="image"><img src="{{ asset('storage/'. $profile->image) }}" alt="profile-image"></figure>
-                        <div class="image-content centred bounce-slide">
+                        {{-- <div class="image-content centred bounce-slide">
                             <h2>20</h2>
                             <h4>Years of expericence</h4>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

@@ -96,11 +96,70 @@
                 <div id="particles-js"></div>
                 <div class="content-box">
                     <h2>Bergabunglah dengan perpustakaan digital <br />terdepan di Indonesia</h2>
-                    <div class="btn-box">
-                        <a href="{{ route('layanan.jenis-layanan') }}" class="theme-btn btn-one mr_20">Lihat Layanan<span></span><span></span><span></span><span></span></a>
+                    <div class="btn-box" style="display: flex; gap: 15px; margin-top: 30px;">
+                        <a href="{{ route('layanan.jenis-layanan') }}" class="theme-btn btn-one">Lihat Layanan<span></span><span></span><span></span><span></span></a>
                         <a href="{{ route('contact') }}" class="theme-btn btn-one">Hubungi Kami<span></span><span></span><span></span><span></span></a>
                     </div>
                 </div>
+                
+                <style>
+                    /* Mobile: Stack buttons vertically */
+                    @media (max-width: 767px) {
+                        .cta-style-two .btn-box {
+                            flex-direction: column !important;
+                            align-items: center !important;
+                            gap: 15px !important;
+                            display: flex !important;
+                        }
+                        
+                        .cta-style-two .theme-btn {
+                            width: 100% !important;
+                            max-width: 280px !important;
+                            text-align: center !important;
+                            margin: 0 !important;
+                            display: block !important;
+                        }
+                        
+                        .cta-style-two .content-box h2 {
+                            font-size: 24px !important;
+                            line-height: 1.3 !important;
+                            margin-bottom: 25px !important;
+                        }
+                        
+                        .cta-style-two .btn-box {
+                            margin-top: 25px !important;
+                        }
+                        
+                        /* Remove any existing float or inline styles */
+                        .cta-style-two .btn-box .theme-btn {
+                            float: none !important;
+                            display: block !important;
+                            margin-right: 0 !important;
+                        }
+                    }
+                    
+                    /* Small mobile screens */
+                    @media (max-width: 480px) {
+                        .cta-style-two .btn-box {
+                            flex-direction: column !important;
+                            width: 100% !important;
+                        }
+                        
+                        .cta-style-two .theme-btn {
+                            width: 90% !important;
+                            margin-bottom: 15px !important;
+                        }
+                    }
+                    
+                    /* Tablet and up: Horizontal layout */
+                    @media (min-width: 768px) {
+                        .cta-style-two .btn-box {
+                            flex-direction: row !important;
+                            justify-content: center !important;
+                            flex-wrap: wrap !important;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </section>

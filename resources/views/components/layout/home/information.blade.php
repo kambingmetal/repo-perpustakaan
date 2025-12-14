@@ -20,7 +20,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 events-block">
                     <div class="events-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <a href="{{ route('information.detail', $info->id) }}" style="text-decoration: none; color: inherit;">
-                            <div class="inner-box">
+                            <div class="inner-box" style="min-height: 450px; display: flex; flex-direction: column;">
                                 <figure class="image-box" style="position: relative;">
                                     @php
                                         $isYouTube = false;
@@ -62,7 +62,7 @@
                                         </div>
                                     @endif
                                 </figure>
-                                <div class="lower-content">
+                                <div class="lower-content" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
                                     <span class="location-box" style="padding-left:0px">{{ $info->category->name }}</span>
                                     <div class="post-date"><h2>{{ date('d', strtotime($info->created_at)) }}<span>{{ date('M', strtotime($info->created_at)) }}</span></h2></div>
                                     <h3>{{ $info->title }}</h3>
@@ -95,6 +95,7 @@
     }
     .events-block-one .image-box {
         overflow: hidden;
+        height: 250px;
     }
     .events-block-one .image-box img {
         transition: transform 0.3s ease;

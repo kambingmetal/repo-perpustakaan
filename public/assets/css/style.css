@@ -2119,7 +2119,7 @@ button.ltr {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .main-footer .footer-bottom .copyright p{

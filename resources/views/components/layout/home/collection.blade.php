@@ -27,11 +27,11 @@
                                             @if($collection->image)
                                                 <img src="{{ asset('storage/' . $collection->image) }}" 
                                                      alt="{{ $collection->title }}" 
-                                                     style="width: 100%; height: auto; display: block; transition: transform 0.3s ease; border-radius: 8px;">
+                                                     style="width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.3s ease; border-radius: 8px;">
                                             @else
-                                                <img src="https://via.placeholder.com/400x300/4A90E2/FFFFFF?text={{ urlencode($collection->title) }}" 
+                                                <img src="https://via.placeholder.com/400x280/4A90E2/FFFFFF?text={{ urlencode($collection->title) }}" 
                                                      alt="{{ $collection->title }}" 
-                                                     style="width: 100%; height: auto; display: block; transition: transform 0.3s ease; border-radius: 8px;">
+                                                     style="width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.3s ease; border-radius: 8px;">
                                             @endif
                                         </figure>
                                     </div>

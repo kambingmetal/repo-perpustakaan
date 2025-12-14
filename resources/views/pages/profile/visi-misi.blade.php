@@ -1,7 +1,11 @@
+@php
+    $banner = $settingPage->banner ?? $globalSettingPage->banner;
+@endphp
+
 <x-layout.main pageTitle="Visi & Misi">
     <section class="page-title centred">
-        @if (!empty($globalSettingPage->banner))
-            <div class="bg-layer" style="background-image: url({{ asset('storage/' . $globalSettingPage->banner) }});"></div>
+        @if (!empty($banner))
+            <div class="bg-layer" style="background-image: url({{ asset('storage/' . $banner) }});"></div>
         @else
             <div class="bg-layer" style="background-image: url(/assets/images/background/page-title-5.jpg);"></div>
         @endif
