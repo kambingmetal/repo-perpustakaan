@@ -1,12 +1,14 @@
 @props([
-    'profile'
+    'profile',
+    'removeButton' => false
 ])
+
 <!-- about-section -->
 <section class="about-section pt_130 pb_120" id="profile">
     <div class="pattern-layer">
-        <div class="pattern-1" style="background-image: url(assets/images/shape/shape-4.png);"></div>
-        <div class="pattern-2" style="background-image: url(assets/images/shape/shape-5.png);"></div>
-        <div class="pattern-3" style="background-image: url(assets/images/shape/shape-6.png);"></div>
+        <div class="pattern-1" style="background-image: url(/assets/images/shape/shape-4.png);"></div>
+        <div class="pattern-2" style="background-image: url(/assets/images/shape/shape-5.png);"></div>
+        <div class="pattern-3" style="background-image: url(/assets/images/shape/shape-6.png);"></div>
     </div>
     <div class="auto-container">
         <div class="row align-items-center">
@@ -14,8 +16,8 @@
                 <div class="image_block_one">
                     <div class="image-box pl_80 pr_65 pb_40">
                         <div class="image-shape">
-                            <div class="shape-1" style="background-image: url({{ asset('assets/images/shape/shape-2.png')}});"></div>
-                            <div class="shape-2" style="background-image: url({{ asset('assets/images/shape/shape-3.png')}});"></div>
+                            <div class="shape-1" style="background-image: url({{ asset('/assets/images/shape/shape-2.png')}});"></div>
+                            <div class="shape-2" style="background-image: url({{ asset('/assets/images/shape/shape-3.png')}});"></div>
                         </div>
                         <figure class="image"><img src="{{ asset('storage/'. $profile->image) }}" alt="profile-image"></figure>
                         {{-- <div class="image-content centred bounce-slide">
@@ -37,7 +39,11 @@
                             </p>
                         </div>
                         <div class="btn-box">
-                            <a href="{{ route('profile.sejarah') }}" class="theme-btn">Get in Touch<span></span><span></span><span></span><span></span></a>
+                            @if (!$removeButton)
+                                <a href="{{ route('profile') }}" class="theme-btn btn-one">
+                                    Pelajari Lebih Lanjut
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ class ProfileCompany extends Model
             ]);
         }
         
-        $profile->image = '';
+        // $profile->image = '';
         return $profile;
     }
 }

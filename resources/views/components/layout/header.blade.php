@@ -63,7 +63,7 @@ $navigationRoutes = [
     ],
     'profile' => [
         'label' => 'Profil',
-        'route' => '#',
+        'route' => 'profile',
         'routes' => ['profile.sejarah', 'profile.visi-misi', 'profile.struktur', 'profile.tim'],
         'children' => [
             'sejarah' => [

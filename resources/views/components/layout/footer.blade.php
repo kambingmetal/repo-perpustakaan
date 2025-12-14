@@ -49,6 +49,9 @@
                                 @if($globalProfile->phone)
                                     <li><i class="fas fa-phone" style="color: white; margin-right: 10px;"></i><a href="tel:{{ $globalProfile->phone }}" style="color: white;">{{ $globalProfile->phone }}</a></li>
                                 @endif
+                                @if($globalProfile->address)
+                                    <li><i class="fas fa-map-marker-alt" style="color: white; margin-right: 10px;"></i><span style="color: white;">{{ $globalProfile->address }}</span></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

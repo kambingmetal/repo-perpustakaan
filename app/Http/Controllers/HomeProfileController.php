@@ -8,6 +8,10 @@ use App\Models\ProfileCompany;
 
 class HomeProfileController extends Controller
 {
+    public function index(){
+        return view('pages.profile.index');
+    }
+
     public function sejarahIndex(){
         $histories = History::active()->ordered()->get();
         return view('pages.profile.sejarah', compact('histories'));
