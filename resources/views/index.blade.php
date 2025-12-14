@@ -26,14 +26,19 @@
                         </div>
                     </div>
                     <div class="feature-block-one">
-                        <div class="inner-box">
+                        <div class="inner-box" style="text-align: center; min-height: 344px; display: flex; flex-direction: column; justify-content: center;">
                             <div class="bg-layer" style="background-image: url({{ asset('assets/images/back-hours.png') }}); opacity:1; width:125%"></div>
-                            <div class="icon-box">
-                                <div class='r-hex'><div class='r-hex-inner'></div></div>
-                                <div class="icon"><i class="icon-6"></i></div>
-                            </div>
-                            <h3><a href="index.html">24/7 Support Assistant</a></h3>
-                            <p>The support assistant is available 24 hours a day, every day of the week, ensuring continuous accessibility</p>
+                            <h3><a href="index.html">Library Hours</a></h3>
+                            <p>Our library is open to serve you on :</p>
+                            @foreach($serviceHours as $hour)
+                                <p><strong>{{ $hour->day . ($hour->end_day ? ' - ' . $hour->end_day : '') }}</strong> : 
+                                    @if($hour->is_closed)
+                                        Closed
+                                    @else
+                                        {{ date('g:i A', strtotime($hour->open_time)) }} - {{ date('g:i A', strtotime($hour->close_time)) }}
+                                    @endif
+                                </p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -42,7 +47,7 @@
         <!-- feature-section end -->
 
 
-        <x-layout.home.profile :profile="$globalProfile" />
+        <x-layout.home.profile :profile="$profileCompany" />
 
         <x-layout.home.statistic :statistics="$statistics"/>
 

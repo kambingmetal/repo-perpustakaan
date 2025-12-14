@@ -3,8 +3,12 @@ use App\Models\ServiceHour;
 
 $currentRoute = Route::currentRouteName();
 
-// Get service hours data
-$serviceHours = ServiceHour::orderBy('day', 'asc')->get();
+$daysOfWeek = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+// Get service hours and sort by day of week order
+$serviceHours = ServiceHour::all()->sortBy(function($hour) use ($daysOfWeek) {
+    return array_search($hour->day, $daysOfWeek);
+});
+
 $serviceHourText = 'Jam Buka: Hubungi Kami';
 
 if ($serviceHours->isNotEmpty()) {

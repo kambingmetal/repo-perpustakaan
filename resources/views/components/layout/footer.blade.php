@@ -32,7 +32,7 @@
                             <h3>Tentang Kami</h3>
                         </div>
                         <div class="widget-content">
-                            <p>{{ $globalProfile->description ?: 'Perpustakaan yang menyediakan berbagai layanan dan fasilitas untuk mendukung kegiatan belajar dan penelitian.' }}</p>
+                            <p>{!! substr($globalProfile->description, 0, 200) . '... <a href="#profile">Read More</a>' ?: 'Perpustakaan yang menyediakan berbagai layanan dan fasilitas untuk mendukung kegiatan belajar dan penelitian.' !!}</p>
                             <ul class="info clearfix">
                                 @if($globalProfile->email)
                                     <li><a href="mailto:{{ $globalProfile->email }}">{{ $globalProfile->email }}</a></li>

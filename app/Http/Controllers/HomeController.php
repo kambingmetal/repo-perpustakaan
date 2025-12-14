@@ -10,6 +10,8 @@ use App\Models\Partner;
 use App\Models\Galery;
 use App\Models\Information;
 use App\Models\Collection;
+use App\Models\ProfileCompany;
+use App\Models\ServiceHour;
 
 class HomeController extends Controller
 {
@@ -22,6 +24,13 @@ class HomeController extends Controller
         $galeries = Galery::orderBy('created_at', 'desc')->limit(8)->get();
         $informations = Information::where('view_on_front', 1)->orderBy('created_at', 'desc')->get();
         $collections = Collection::active()->ordered()->limit(10)->get();
+        $profileCompany = ProfileCompany::first();
+
+        $daysOfWeek = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+        // Get service hours and sort by day of week order
+        $serviceHours = ServiceHour::all()->sortBy(function($hour) use ($daysOfWeek) {
+            return array_search($hour->day, $daysOfWeek);
+        });
 
         // config title
         $setting_page = SettingPage::select(
@@ -30,7 +39,7 @@ class HomeController extends Controller
                 'banner'
             )->first();
 
-        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations', 'collections'));
+        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations', 'collections', 'profileCompany', 'serviceHours'));
     }
 
     public function contactIndex(){

@@ -2,7 +2,7 @@
     'profile'
 ])
 <!-- about-section -->
-<section class="about-section pt_130 pb_120">
+<section class="about-section pt_130 pb_120" id="profile">
     <div class="pattern-layer">
         <div class="pattern-1" style="background-image: url(assets/images/shape/shape-4.png);"></div>
         <div class="pattern-2" style="background-image: url(assets/images/shape/shape-5.png);"></div>
@@ -37,7 +37,7 @@
                             </p>
                         </div>
                         <div class="btn-box">
-                            <a href="about.html" class="theme-btn">Get in Touch<span></span><span></span><span></span><span></span></a>
+                            <a href="{{ route('profile.sejarah') }}" class="theme-btn">Get in Touch<span></span><span></span><span></span><span></span></a>
                         </div>
                     </div>
                 </div>
