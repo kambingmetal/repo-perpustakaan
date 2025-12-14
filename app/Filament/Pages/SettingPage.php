@@ -43,6 +43,9 @@ class SettingPage extends Page
             'image_info' => $this->record->image_info,
             'banner' => $this->record->banner,
             'footer_banner' => $this->record->footer_banner,
+            'image_profile' => $this->record->image_profile,
+            'icon_image_opac' => $this->record->icon_image_opac,
+            'icon_image_repository' => $this->record->icon_image_repository,
         ]);
     }
     
@@ -131,6 +134,42 @@ class SettingPage extends Page
                             ->imageEditor()
                             ->imagePreviewHeight('200')
                             ->columnSpanFull(),
+                    ])
+                    ->columns(2),
+                    
+                Forms\Components\Section::make('Pengaturan Profile')
+                    ->schema([
+                        Forms\Components\FileUpload::make('image_profile')
+                            ->label('Gambar Profile')
+                            ->image()
+                            ->disk('public')
+                            ->directory('settings')
+                            ->visibility('public')
+                            ->maxSize(2048)
+                            ->imageEditor()
+                            ->imagePreviewHeight('200')
+                            ->helperText('Gambar yang akan ditampilkan di bagian profile perusahaan')
+                            ->columnSpanFull(),
+                        Forms\Components\FileUpload::make('icon_image_opac')
+                            ->label('Icon OPAC')
+                            ->image()
+                            ->disk('public')
+                            ->directory('settings/icons')
+                            ->visibility('public')
+                            ->maxSize(1024)
+                            ->imageEditor()
+                            ->imagePreviewHeight('100')
+                            ->helperText('Icon untuk OPAC (Online Public Access Catalog)'),
+                        Forms\Components\FileUpload::make('icon_image_repository')
+                            ->label('Icon Repository')
+                            ->image()
+                            ->disk('public')
+                            ->directory('settings/icons')
+                            ->visibility('public')
+                            ->maxSize(1024)
+                            ->imageEditor()
+                            ->imagePreviewHeight('100')
+                            ->helperText('Icon untuk Repository'),
                     ])
                     ->columns(2),
                     

@@ -8,21 +8,33 @@
             <div class="auto-container">
                 <div class="inner-container clearfix">
                     <div class="feature-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box">
+                        <div class="inner-box" style="min-height: 344px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                            <div class="icon-box" style="position: relative;">
                                 <div class='r-hex'><div class='r-hex-inner'></div></div>
-                                <div class="icon"><i class="icon-4"></i></div>
+                                @if ($globalSettingPage->icon_image_opac)
+                                    <img src="{{ asset('storage/' . $globalSettingPage->icon_image_opac) }}" alt="OPAC Icon" 
+                                         style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                                width: 50px; height: 50px; object-fit: contain; z-index: 10;">
+                                @else
+                                    <div class="icon"><i class="icon-4"></i></div>
+                                @endif
                             </div>
-                            <h3 style="font-size: 42px; margin-top:30px"><a href="index.html" class="py-4">OPAC</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="index.html" class="py-4">OPAC</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">
-                        <div class="inner-box">
-                            <div class="icon-box">
+                        <div class="inner-box" style="min-height: 344px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                            <div class="icon-box" style="position: relative;">
                                 <div class='r-hex'><div class='r-hex-inner'></div></div>
-                                <div class="icon"><i class="icon-5"></i></div>
+                                @if ($globalSettingPage->icon_image_repository)
+                                    <img src="{{ asset('storage/' . $globalSettingPage->icon_image_repository) }}" alt="Repository Icon" 
+                                         style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                                width: 50px; height: 50px; object-fit: contain; z-index: 10;">
+                                @else
+                                    <div class="icon"><i class="icon-5"></i></div>
+                                @endif
                             </div>
-                            <h3 style="font-size: 42px; margin-top:30px"><a href="index.html" class="py-4">Repository</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="index.html" class="py-4">Repository</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">

@@ -19,7 +19,7 @@
                             <div class="shape-1" style="background-image: url({{ asset('/assets/images/shape/shape-2.png')}});"></div>
                             <div class="shape-2" style="background-image: url({{ asset('/assets/images/shape/shape-3.png')}});"></div>
                         </div>
-                        <figure class="image"><img src="{{ asset('storage/'. $profile->image) }}" alt="profile-image"></figure>
+                        <figure class="image"><img src="{{ asset('storage/'. $globalSettingPage->image_profile) }}" alt="profile-image"></figure>
                         {{-- <div class="image-content centred bounce-slide">
                             <h2>20</h2>
                             <h4>Years of expericence</h4>

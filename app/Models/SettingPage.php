@@ -32,7 +32,11 @@ class SettingPage extends Model
         'meta_keyword',
         'meta_description',
         'favicon',
-        'og_image',
+        'og_image',        
+        // Profile Fields
+        'image_profile',
+        'icon_image_opac',
+        'icon_image_repository',
     ];
 
     public function updater()
