@@ -129,6 +129,25 @@ function isMenuActive($item, $currentRoute) {
 }
 @endphp
 
+{{-- Css tambahan --}}
+<style>
+    .fixed-header .sticky-header{
+        background-color: #113281 !important;
+    }
+
+    .sticky-header .main-menu .navigation > li > a{
+        color: #ffffff !important;
+    }
+
+    .main-header .header-lower .outer-box:before {
+        background: #ffffff !important;
+    }
+
+    .header-top .top-inner:before{
+        background: #113281 !important;
+    }
+</style>
+
 <!-- main header -->
 <header class="main-header">
     <!-- header-top -->

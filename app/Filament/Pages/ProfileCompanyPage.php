@@ -27,7 +27,7 @@ class ProfileCompanyPage extends Page
     
     public function mount(): void
     {
-        $this->record = ProfileCompany::getInstance();
+        $this->record = ProfileCompany::first();
         
         $this->form->fill([
             'title' => $this->record->title,
@@ -145,6 +145,7 @@ class ProfileCompanyPage extends Page
                         Forms\Components\FileUpload::make('image')
                             ->label('Logo/Gambar')
                             ->image()
+                            ->required()
                             ->disk('public')
                             ->directory('company')
                             ->visibility('public')
