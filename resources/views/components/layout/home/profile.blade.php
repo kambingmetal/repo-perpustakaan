@@ -33,7 +33,7 @@
                         </div>
                         <div class="text-box mb_45 title-animation">
                             <p>
-                                {{ $profile->description }}
+                                {!! $profile->description !!}
                             </p>
                         </div>
                         <div class="btn-box">
