@@ -33,5 +33,8 @@ class DatabaseSeeder extends Seeder
         
         // Create Profile Company
         $this->call(ProfileCompanySeeder::class);
+        
+        // Create Hero Content
+        $this->call(HeroContentSeeder::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Slider;
+use App\Models\HeroContent;
 use App\Models\Statistic;
 use App\Models\SettingPage;
 use App\Models\Partner;
@@ -19,6 +20,7 @@ class HomeController extends Controller
 
         //data
         $sliders = Slider::orderBy('order', 'asc')->get();
+        $heroContents = HeroContent::active()->ordered()->limit(2)->get();
         $statistics = Statistic::all();
         $partners = Partner::all();
         $galeries = Galery::orderBy('created_at', 'desc')->limit(8)->get();
@@ -38,8 +40,8 @@ class HomeController extends Controller
                 'title_info', 'subtitle_info', 'title_collection', 'subtitle_collection',
                 'banner'
             )->first();
-
-        return view('index', compact('sliders', 'statistics', 'setting_page', 'partners', 'galeries','informations', 'collections', 'profileCompany', 'serviceHours'));
+        
+        return view('index', compact('sliders', 'heroContents', 'statistics', 'setting_page', 'partners', 'galeries','informations', 'collections', 'profileCompany', 'serviceHours'));
     }
 
     public function contactIndex(){

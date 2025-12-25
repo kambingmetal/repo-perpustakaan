@@ -1,9 +1,10 @@
 @props([
     'gallery',
-    'index' => 0
+    'index' => 0,
+    'classCol' => 'col-lg-3 col-md-6 col-sm-12'
 ])
 
-<div class="col-lg-3 col-md-6 col-sm-12 research-block">
+<div class="{{ $classCol }} research-block" style="height: fit-content;">
     <div class="research-block-one">
         <div class="inner-box gallery-item" 
              data-bs-toggle="modal" 

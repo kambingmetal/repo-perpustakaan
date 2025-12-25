@@ -70,6 +70,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-12">
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.709519887359!2d140.6525742!3d-2.6004941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c604000000001%3A0x45ad6896a73ea040!2sPoliteknik%20Kesehatan%20Jayapura!5e0!3m2!1sid!2sid!4v1766667535823!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -110,6 +116,32 @@
             .form-group textarea.is-invalid:focus {
                 border-color: #dc3545 !important;
                 box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+            }
+            
+            /* Responsive Google Maps */
+            .map-responsive {
+                position: relative;
+                padding-bottom: 37.5%; /* 16:6 aspect ratio */
+                height: 0;
+                overflow: hidden;
+                margin-top: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .map-responsive iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+                border: 0;
+            }
+            
+            @media (max-width: 768px) {
+                .map-responsive {
+                    padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */
+                }
             }
         </style>
         
