@@ -41,10 +41,18 @@
                         }
                     @endphp
                     <figure class="overlay-image">
-                        <img src="https://img.youtube.com/vi/{{ $youtube_id }}/maxresdefault.jpg" alt="{{ $gallery->title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <img src="https://img.youtube.com/vi/{{ $youtube_id }}/hqdefault.jpg" 
+                             alt="{{ $gallery->title }}" 
+                             style="width: 100%; height: 200px; object-fit: cover;"
+                             data-checked="false"
+                             onload="checkMaxRes(this, '{{ $youtube_id }}')">
                     </figure>
                     <figure class="image">
-                        <img src="https://img.youtube.com/vi/{{ $youtube_id }}/maxresdefault.jpg" alt="{{ $gallery->title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                        <img src="https://img.youtube.com/vi/{{ $youtube_id }}/hqdefault.jpg" 
+                             alt="{{ $gallery->title }}" 
+                             style="width: 100%; height: 200px; object-fit: cover;"
+                             data-checked="false"
+                             onload="checkMaxRes(this, '{{ $youtube_id }}')">
                     </figure>
                     <div class="play-button">
                         <i class="fas fa-play-circle"></i>
@@ -83,3 +91,28 @@
         </div>
     </div>
 </div>
+
+<script>
+function checkMaxRes(img, videoId) {
+    // Prevent infinite loop - only check once
+    if (img.dataset.checked === 'true') {
+        return;
+    }
+    
+    // Mark as checked
+    img.dataset.checked = 'true';
+    
+    // Create a new image to test maxresdefault availability
+    const testImg = new Image();
+    testImg.onload = function() {
+        // maxresdefault is available, switch to it
+        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    };
+    testImg.onerror = function() {
+        // maxresdefault not available, keep hqdefault
+        // Do nothing, already using hqdefault
+    };
+    // Test the maxresdefault URL
+    testImg.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
+</script>

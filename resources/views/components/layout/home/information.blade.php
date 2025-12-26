@@ -32,7 +32,7 @@
                                             if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $info->youtube_link, $matches)) {
                                                 $isYouTube = true;
                                                 $youtubeId = $matches[1];
-                                                $imageUrl = "https://img.youtube.com/vi/{$youtubeId}/maxresdefault.jpg";
+                                                $imageUrl = "https://img.youtube.com/vi/{$youtubeId}/hqdefault.jpg";
                                             }
                                         }
                                         
