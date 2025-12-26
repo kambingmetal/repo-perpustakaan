@@ -37,6 +37,8 @@ class SettingPage extends Model
         'image_profile',
         'icon_image_opac',
         'icon_image_repository',
+        'opac_url',
+        'repository_url',
     ];
 
     public function updater()

@@ -19,7 +19,7 @@
                                     <div class="icon"><i class="icon-4"></i></div>
                                 @endif
                             </div>
-                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="index.html" class="py-4">OPAC</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="{{ $globalSettingPage->opac_url ?? "#" }}" class="py-4">OPAC</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">
@@ -34,7 +34,7 @@
                                     <div class="icon"><i class="icon-5"></i></div>
                                 @endif
                             </div>
-                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="https://repository-poltekes-jayapura.wanteknologi.com" class="py-4">Repository</a></h3>
+                            <h3 style="font-size: 42px; margin-top:30px; text-align: start;"><a href="{{ $globalSettingPage->repository_url ?? "#" }}" class="py-4">Repository</a></h3>
                         </div>
                     </div>
                     <div class="feature-block-one">

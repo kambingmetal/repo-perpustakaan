@@ -46,6 +46,8 @@ class SettingPage extends Page
             'image_profile' => $this->record->image_profile,
             'icon_image_opac' => $this->record->icon_image_opac,
             'icon_image_repository' => $this->record->icon_image_repository,
+            'opac_url' => $this->record->opac_url,
+            'repository_url' => $this->record->repository_url,
         ]);
     }
     
@@ -170,6 +172,14 @@ class SettingPage extends Page
                             ->imageEditor()
                             ->imagePreviewHeight('100')
                             ->helperText('Icon untuk Repository'),
+                        Forms\Components\TextInput::make('opac_url')
+                            ->url()
+                            ->label('URL OPAC')
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('repository_url')
+                            ->url()
+                            ->label('URL Repository')
+                            ->maxLength(255),
                     ])
                     ->columns(2),
                     
